@@ -48,12 +48,55 @@
   .burger summary i{width:18px;height:2px;border-radius:2px;background:var(--ink)}
   .mobile-menu{display:none;border-top:1px solid var(--line);padding:8px 20px 24px;flex-direction:column}
   .mobile-menu a{text-decoration:none;color:var(--ink);font-family:'League Spartan',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.03em;padding:12px 4px;border-bottom:1px solid var(--line)}
-  @media(max-width:980px){
+  .dd{position:relative}
+  .dd button{font-family:inherit;background:none;border:none;padding:8px 0;cursor:pointer;color:var(--green);font-weight:800;font-size:14.5px;display:flex;align-items:center;gap:6px;white-space:nowrap}
+  .dd button span{font-size:10px;transition:transform .2s}
+  .dd:hover button span{transform:rotate(180deg)}
+  .dd-pop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:10px;z-index:70}
+  .dd:hover .dd-pop,.dd:focus-within .dd-pop{display:block}
+  .dd-box{background:#fff;border-radius:20px;padding:10px;box-shadow:0 24px 50px -20px rgba(19,41,26,.45);border:1px solid var(--line);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;width:440px}
+  .dd-box a{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;font-weight:700;font-size:14.5px;white-space:nowrap}
+  .dd-box a:hover{background:var(--paper);color:var(--ink)}
+  .dd-box em{font-style:normal;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(19,41,26,.5)}
+  .d{width:12px;height:12px;border-radius:50%;flex:none;display:inline-block}
+  .m-label{font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(19,41,26,.55);padding:18px 4px 8px}
+  .m-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .mobile-menu a.pj{display:flex;align-items:center;gap:10px;padding:12px;border-radius:14px;background:#fff;font-family:'Figtree',sans-serif;font-weight:700;font-size:14px;letter-spacing:0;min-height:44px;border-bottom:none}
+  .mobile-menu a.m-ar{align-self:flex-start;margin-top:20px;color:var(--green);border:1.5px solid rgba(11,90,36,.25);border-radius:999px;padding:10px 18px;font-family:'Figtree',sans-serif;font-weight:700;font-size:14px;letter-spacing:0;border-bottom:1.5px solid rgba(11,90,36,.25)}
+  .mobile-menu{max-height:calc(100vh - 78px);overflow-y:auto}
+  .m-top,.m-stat{display:none}
+
+  /* MOBILE: mirrors the other project pages */
+  @media(max-width:899px){
+    body{zoom:.8}
     .links,.nav-cta .ghost{display:none}
     .burger{display:block}
-    .nav-in img{height:46px}
+    .nav-in{padding:12px 18px}
+    .nav-in img{height:54px}
+    .nav-cta{gap:8px}
+    .nav-cta .solid{font-size:13.5px;padding:11px 16px}
     nav:has(.burger[open]) .mobile-menu{display:flex}
+    .hero{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:14px;align-items:stretch;padding-top:clamp(18px,4vw,40px);padding-bottom:28px}
+    .m-top{display:flex;flex-direction:column;gap:12px;grid-column:1 / -1;margin-bottom:-2px}
+    .m-top .back{margin:0;align-self:flex-start}
+    .m-top .eyebrow{font-size:12.5px;letter-spacing:.26em}
+    .m-top .eyebrow::before{width:28px}
+    .hero .col .back,.hero .col .eyebrow{display:none}
+    .hero .col h1{font-size:clamp(32px,8.5vw,124px);line-height:.86;margin:0 0 clamp(10px,2vw,26px)}
+    .hero .col p.lead{font-size:15px;margin-bottom:clamp(14px,2.6vw,34px)}
+    .m-stat{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin:0 0 14px;font-size:13px;color:rgba(19,41,26,.7)}
+    .m-stat b{font-family:'League Spartan',sans-serif;font-weight:800;font-size:17px;letter-spacing:-.03em;color:var(--green)}
+    .ctas{flex-direction:column;align-items:stretch;gap:8px}
+    .btn{min-height:54px;font-size:15px;padding:0 16px}
+    .arch{order:0;height:auto;min-height:300px;max-width:none;width:100%;margin:0}
+    .arch .tag{display:none}
+    .reqs,.daily{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .req{padding:16px}
+    .req h3{font-size:19px}
+    .req p{font-size:14px}
   }
+  @media(max-width:520px){.reqs,.daily{grid-template-columns:1fr}.req{padding:18px}}
+  @media(max-width:520px) and (min-width:421px){.reqs,.daily{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
   /* HERO */
   .hero{display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(24px,4vw,64px);align-items:center;padding-top:clamp(18px,4vw,40px);padding-bottom:clamp(36px,6vw,80px)}
@@ -73,7 +116,6 @@
   .arch .tag{position:absolute;left:-10px;bottom:22px;background:#fff;border-radius:20px;padding:14px 18px;box-shadow:0 18px 40px -20px rgba(19,41,26,.5);max-width:230px}
   .arch .tag b{display:block;font-family:'League Spartan',sans-serif;font-weight:800;font-size:34px;letter-spacing:-.05em;line-height:1;color:var(--green)}
   .arch .tag span{font-size:13px;font-weight:600;color:var(--muted);line-height:1.3;display:block;margin-top:4px}
-  @media(max-width:860px){.hero{grid-template-columns:1fr}.arch{margin:0 auto;order:-1;height:340px;max-width:300px}.arch .tag{left:0}}
 
   /* SECTIONS */
   section.band{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -169,7 +211,7 @@
     <a href="index.html"><img src="img/logo.png" alt="Feed a Friend"></a>
     <div class="links">
       <a href="index.html">Home</a>
-      <a href="index.html#projects" class="on">Projects</a>
+      <div class="dd"><button type="button" class="on">Projects <span>▼</span></button><div class="dd-pop"><div class="dd-box"><a href="project.html?p=food-boxes"><span class="d" style="background:#F5C33B"></span>Food Boxes</a><a href="project.html?p=welcome-baby"><span class="d" style="background:#C45CF0"></span>Welcome Baby</a><a href="project.html?p=community-fridges"><span class="d" style="background:#F9A24B"></span>Community Fridges</a><a href="project.html?p=little-learners"><span class="d" style="background:#4FB3B0"></span>Little Learners</a><a href="project.html?p=books-for-good"><span class="d" style="background:#7FB3E6"></span>Books for Good</a><a href="project.html?p=giving-garden"><span class="d" style="background:#F7AEF8"></span>Giving Garden</a><a href="project.html?p=share-and-care"><span class="d" style="background:#F2705E"></span>Share and Care<em>Soon</em></a></div></div></div>
       <a href="index.html#volunteer">Volunteer</a>
       <a href="https://connect.feedafriend.org/fridges">Fridge Map</a>
       <a href="coming-soon.html?for=businesses">Businesses</a>
@@ -183,22 +225,28 @@
   </div>
   <div class="mobile-menu">
     <a href="index.html">Home</a>
-    <a href="project.html?p=community-fridges">Community Fridges</a>
-    <a href="https://connect.feedafriend.org/fridges">Fridge Map</a>
+    <div class="m-label">Projects</div>
+    <div class="m-grid"><a class="pj" href="project.html?p=food-boxes"><span class="d" style="background:#F5C33B"></span>Food Boxes</a><a class="pj" href="project.html?p=welcome-baby"><span class="d" style="background:#C45CF0"></span>Welcome Baby</a><a class="pj" href="project.html?p=community-fridges"><span class="d" style="background:#F9A24B"></span>Community Fridges</a><a class="pj" href="project.html?p=little-learners"><span class="d" style="background:#4FB3B0"></span>Little Learners</a><a class="pj" href="project.html?p=books-for-good"><span class="d" style="background:#7FB3E6"></span>Books for Good</a><a class="pj" href="project.html?p=giving-garden"><span class="d" style="background:#F7AEF8"></span>Giving Garden</a><a class="pj" href="project.html?p=share-and-care"><span class="d" style="background:#F2705E"></span>Share and Care</a></div>
     <a href="index.html#volunteer">Volunteer</a>
-    <a href="coming-soon.html?for=schools">Schools</a>
+    <a href="https://connect.feedafriend.org/fridges">Fridge Map</a>
     <a href="coming-soon.html?for=businesses">Businesses</a>
-    <a href="index-ar.html">عربي</a>
+    <a href="coming-soon.html?for=schools">Schools</a>
+    <a href="index-ar.html" class="m-ar">عربي</a>
   </div>
-</nav>
+  </nav>
 
 <!-- HERO -->
 <header class="wrap hero">
-  <div>
+  <div class="m-top">
+    <a class="back" href="project.html?p=community-fridges">← Community Fridges</a>
+    <div class="eyebrow">Install a fridge</div>
+  </div>
+  <div class="col">
     <a class="back" href="project.html?p=community-fridges">← Community Fridges</a>
     <div class="eyebrow">Install a fridge</div>
     <h1 class="display">Host a community fridge.</h1>
     <p class="lead">A fridge outside your home or school, open to everyone. Anyone can take what they need, and anyone can add what they can spare. Choose the route that fits you.</p>
+    <div class="m-stat"><b>101</b> community fridges across Qatar</div>
     <div class="ctas">
       <a class="btn orange" href="#home">I own my home <span>→</span></a>
       <a class="btn green" href="#school">I'm a school <span>→</span></a>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Need a Helping Hand? — Welcome Baby | Feed a Friend Qatar</title>
+<meta name="description" content="Need a Welcome Baby care box? See who can apply and apply to Feed a Friend Qatar.">
+<meta property="og:title" content="Need a Helping Hand? — Welcome Baby | Feed a Friend Qatar">
+<meta property="og:description" content="Need a Welcome Baby care box? See who can apply and apply to Feed a Friend Qatar.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Feed a Friend Qatar">
+<meta property="og:image" content="https://feedafriend.org/img/og.jpg?v=3">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=League+Spartan:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#0B5A24; --leaf:#3FA34A; --ink:#13291A; --paper:#FAFAF7;
+    --fridge:#F9A24B; --sun:#F5C33B; --line:rgba(19,41,26,0.08);
+    --muted:rgba(19,41,26,0.72); --acc:#C45CF0; --hink:#fff; --tint:#F7E8FD;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{font-family:'Figtree',sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+  a{color:var(--green)} a:hover{color:var(--leaf)}
+  ::selection{background:var(--sun);color:var(--ink)}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1320px;margin:0 auto;padding-left:clamp(18px,3vw,32px);padding-right:clamp(18px,3vw,32px)}
+  .display{font-family:'League Spartan',sans-serif;font-weight:800;letter-spacing:-0.055em;line-height:0.9;color:var(--green)}
+  .eyebrow{display:flex;align-items:center;gap:12px;font-weight:700;font-size:12.5px;letter-spacing:0.3em;text-transform:uppercase}
+  .eyebrow::before{content:"";width:32px;height:2px;background:var(--rule,var(--fridge));flex:none}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:60;background:rgba(250,250,247,0.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:1320px;margin:0 auto;padding:12px clamp(18px,3vw,32px);display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .nav-in img{height:54px;width:auto}
+  .links{display:flex;gap:4px 24px;flex-wrap:wrap;justify-content:center;align-items:center}
+  .links a{text-decoration:none;color:var(--ink);font-weight:600;font-size:14.5px;white-space:nowrap}
+  .links a.on{color:var(--green);font-weight:800}
+  .nav-cta{display:flex;align-items:center;gap:10px;flex:none}
+  .pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;border-radius:999px;font-weight:700;font-size:14px;padding:11px 22px;white-space:nowrap}
+  .pill.solid{background:var(--green);color:#fff} .pill.solid:hover{color:#fff;background:#08461c}
+  .pill.ghost{color:var(--green);border:1.5px solid rgba(11,90,36,0.25);padding:8px 14px;font-size:13.5px}
+  .burger{display:none}
+  .burger summary{list-style:none;width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(19,41,26,0.18);background:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+  .burger summary::-webkit-details-marker{display:none}
+  .burger summary i{width:18px;height:2px;border-radius:2px;background:var(--ink)}
+  .mobile-menu{display:none;border-top:1px solid var(--line);padding:8px 20px 24px;flex-direction:column}
+  .mobile-menu a{text-decoration:none;color:var(--ink);font-family:'League Spartan',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.03em;padding:12px 4px;border-bottom:1px solid var(--line)}
+  .dd{position:relative}
+  .dd button{font-family:inherit;background:none;border:none;padding:8px 0;cursor:pointer;color:var(--green);font-weight:800;font-size:14.5px;display:flex;align-items:center;gap:6px;white-space:nowrap}
+  .dd button span{font-size:10px;transition:transform .2s}
+  .dd:hover button span{transform:rotate(180deg)}
+  .dd-pop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:10px;z-index:70}
+  .dd:hover .dd-pop,.dd:focus-within .dd-pop{display:block}
+  .dd-box{background:#fff;border-radius:20px;padding:10px;box-shadow:0 24px 50px -20px rgba(19,41,26,.45);border:1px solid var(--line);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;width:440px}
+  .dd-box a{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;font-weight:700;font-size:14.5px;white-space:nowrap}
+  .dd-box a:hover{background:var(--paper);color:var(--ink)}
+  .dd-box em{font-style:normal;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(19,41,26,.5)}
+  .d{width:12px;height:12px;border-radius:50%;flex:none;display:inline-block}
+  .m-label{font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(19,41,26,.55);padding:18px 4px 8px}
+  .m-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .mobile-menu a.pj{display:flex;align-items:center;gap:10px;padding:12px;border-radius:14px;background:#fff;font-family:'Figtree',sans-serif;font-weight:700;font-size:14px;letter-spacing:0;min-height:44px;border-bottom:none}
+  .mobile-menu a.m-ar{align-self:flex-start;margin-top:20px;color:var(--green);border:1.5px solid rgba(11,90,36,.25);border-radius:999px;padding:10px 18px;font-family:'Figtree',sans-serif;font-weight:700;font-size:14px;letter-spacing:0;border-bottom:1.5px solid rgba(11,90,36,.25)}
+  .mobile-menu{max-height:calc(100vh - 78px);overflow-y:auto}
+  .m-top,.m-stat,.m-ctas{display:none}
+
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(24px,4vw,64px);align-items:center;padding-top:clamp(18px,4vw,40px);padding-bottom:clamp(36px,6vw,80px)}
+  .back{display:inline-flex;gap:8px;font-weight:700;font-size:14px;text-decoration:none;margin-bottom:clamp(20px,3vw,36px)}
+  .hero h1{font-size:clamp(40px,8vw,112px);margin:22px 0 clamp(12px,2vw,26px);text-wrap:balance}
+  .hero p.lead{font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:var(--muted);max-width:560px;margin-bottom:clamp(18px,2.6vw,32px);text-wrap:pretty}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:800;font-size:16px;min-height:54px;padding:0 28px;border-radius:999px;transition:transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(19,41,26,.5)}
+  .btn.orange{background:var(--fridge);color:var(--ink)} .btn.orange:hover{color:var(--ink)}
+  .btn.green{background:var(--green);color:#fff} .btn.green:hover{color:#fff}
+  .btn.line{border:1.5px solid rgba(19,41,26,.2);color:var(--ink);font-weight:700}
+  .arch{position:relative;height:clamp(360px,52vw,620px);max-width:440px;width:100%;margin-left:auto}
+  .arch .frame{position:absolute;inset:0;border-radius:999px 999px 26px 26px;background:var(--fridge);padding:10px}
+  .arch .frame div{width:100%;height:100%;border-radius:999px 999px 18px 18px;overflow:hidden}
+  .arch img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1) contrast(1.04)}
+  .arch .tag{position:absolute;left:-10px;bottom:22px;background:#fff;border-radius:20px;padding:14px 18px;box-shadow:0 18px 40px -20px rgba(19,41,26,.5);max-width:230px}
+  .arch .tag b{display:block;font-family:'League Spartan',sans-serif;font-weight:800;font-size:34px;letter-spacing:-.05em;line-height:1;color:var(--green)}
+  .arch .tag span{font-size:13px;font-weight:600;color:var(--muted);line-height:1.3;display:block;margin-top:4px}
+
+  /* SECTIONS */
+  section.band{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .pad{padding-top:clamp(44px,8vw,96px);padding-bottom:clamp(44px,8vw,96px)}
+  h2.display{font-size:clamp(32px,5.5vw,76px);margin:16px 0 clamp(24px,4vw,44px);text-wrap:balance}
+  .sub{font-size:clamp(15px,1.4vw,18px);color:var(--muted);max-width:640px;margin:-14px 0 clamp(24px,4vw,40px)}
+
+  /* requirements */
+  .reqs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(10px,1.5vw,20px)}
+  .req{background:#fff;border:1px solid rgba(19,41,26,.06);border-radius:clamp(18px,2vw,26px);padding:clamp(18px,2vw,28px);display:flex;flex-direction:column;gap:10px}
+  .req .ic{width:52px;height:52px;border-radius:50%;background:var(--fridge);display:grid;place-items:center}
+  .req .ic svg{width:28px;height:28px;stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .req h3,.card h3{font-family:'League Spartan',sans-serif;font-weight:700;font-size:clamp(20px,2vw,26px);letter-spacing:-.03em;line-height:1.05}
+  .req p{font-size:15px;color:var(--muted)}
+  .note{margin-top:clamp(16px,2vw,24px);background:var(--ink);color:#fff;border-radius:22px;padding:clamp(16px,2vw,24px) clamp(18px,2.4vw,30px);display:flex;gap:16px;align-items:flex-start}
+  .note b{color:var(--sun)} .note p{font-size:15.5px;line-height:1.55}
+  .dot{flex:none;width:12px;height:12px;border-radius:50%;background:var(--sun);margin-top:7px}
+
+  /* routes */
+  .routes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px);align-items:stretch}
+  @media(max-width:900px){.routes{grid-template-columns:1fr}}
+  .card{border-radius:clamp(24px,3vw,36px);padding:clamp(22px,3vw,44px);display:flex;flex-direction:column;gap:18px}
+  .card.home{background:#fff;border:1px solid rgba(19,41,26,.08);box-shadow:inset 0 8px 0 var(--fridge)}
+  .card.school{background:var(--green);color:#fff}
+  .card .who{font-weight:800;font-size:12.5px;letter-spacing:.28em;text-transform:uppercase}
+  .card.home .who{color:#c26a0a} .card.school .who{color:var(--sun)}
+  .card h3{font-size:clamp(30px,3.6vw,50px);letter-spacing:-.05em;line-height:.95}
+  .card.home h3{color:var(--green)}
+  .card .intro{font-size:16.5px;line-height:1.55}
+  .card.home .intro{color:var(--muted)} .card.school .intro{color:rgba(255,255,255,.85)}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .fact{border-radius:18px;padding:14px 16px;font-size:14px;line-height:1.35}
+  .fact b{display:block;font-family:'League Spartan',sans-serif;font-size:19px;letter-spacing:-.03em;margin-bottom:2px}
+  .card.home .fact{background:var(--paper)} .card.school .fact{background:rgba(255,255,255,.12)}
+  .steps{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:14px;margin-top:4px}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+  .steps li::before{content:counter(s);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:'League Spartan',sans-serif;font-weight:800;font-size:18px}
+  .card.home .steps li::before{background:var(--fridge);color:var(--ink)}
+  .card.school .steps li::before{background:var(--sun);color:var(--ink)}
+  .steps b{display:block;font-size:17px;margin-bottom:2px}
+  .steps span{font-size:15px;line-height:1.5}
+  .card.home .steps span{color:var(--muted)} .card.school .steps span{color:rgba(255,255,255,.82)}
+  .flag{border-radius:16px;padding:12px 16px;font-size:14.5px;font-weight:600;line-height:1.4}
+  .card.home .flag{background:#FFF1DE;color:#7a3f00}
+  .card.school .flag{background:rgba(245,195,59,.18);color:#FFE9A8}
+  .card .push{margin-top:auto;padding-top:6px}
+
+  /* site diagram */
+  .diagram{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,4vw,56px);align-items:center}
+  @media(max-width:860px){.diagram{grid-template-columns:1fr}}
+  .diagram svg{width:100%;height:auto;background:#fff;border:1px solid rgba(19,41,26,.06);border-radius:28px}
+  .legend{display:flex;flex-direction:column;gap:14px;list-style:none}
+  .legend li{display:grid;grid-template-columns:32px 1fr;gap:12px;font-size:16px;align-items:start}
+  .legend em{font-style:normal;width:32px;height:32px;border-radius:50%;background:var(--fridge);display:grid;place-items:center;font-family:'League Spartan',sans-serif;font-weight:800}
+  .legend b{display:block}
+  .legend span{color:var(--muted);font-size:15px}
+
+  /* care */
+  .care{background:#FFF4E4}
+  .daily{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:clamp(10px,1.5vw,20px)}
+  .daily .req .ic{background:var(--green)}
+  .daily .req .ic svg{stroke:#fff}
+  .rota{margin-top:clamp(24px,4vw,44px);background:#fff;border-radius:28px;border:1px solid rgba(19,41,26,.06);padding:clamp(18px,3vw,36px)}
+  .rota h3{font-family:'League Spartan',sans-serif;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.04em;color:var(--green);margin-bottom:6px}
+  .rota p{color:var(--muted);font-size:15px;margin-bottom:18px;max-width:640px}
+  .week{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .day{border-radius:18px;background:var(--paper);padding:14px 10px;text-align:center;border:1.5px dashed rgba(19,41,26,.2)}
+  .day small{display:block;font-weight:800;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(19,41,26,.55)}
+  .day b{display:block;font-family:'League Spartan',sans-serif;font-size:clamp(17px,2vw,24px);letter-spacing:-.03em;color:var(--green);margin-top:4px}
+  .day:nth-child(odd){background:#fff4dc}
+  .eg{font-size:12.5px;color:rgba(19,41,26,.55);margin-top:12px}
+  @media(max-width:560px){.week{grid-template-columns:repeat(2,1fr)}}
+
+  /* cta band */
+  .cta-band{background:var(--green);color:#fff}
+  .cta-band .display{color:#fff}
+  .cta-grid{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
+  .cta-band p{color:rgba(255,255,255,.82);font-size:17px;max-width:520px}
+
+  footer{background:var(--green);color:#fff;border-top:1px solid rgba(255,255,255,.12)}
+  .foot{max-width:1320px;margin:0 auto;padding:clamp(12px,2vw,24px) clamp(18px,3vw,32px);display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .foot img{height:clamp(32px,4vw,48px);width:auto}
+  .foot .l{display:flex;align-items:center;gap:14px}
+  .foot span{font-size:13px;color:rgba(255,255,255,.6);white-space:nowrap}
+  .foot a{text-decoration:none;background:var(--leaf);color:#fff;border-radius:999px;padding:0 14px;height:40px;display:flex;align-items:center;font-weight:700;font-size:13px;white-space:nowrap}
+  @media(max-width:520px){.foot span{display:none}}
+  /* MOBILE: mirrors the other project pages */
+  @media(max-width:899px){
+    body{zoom:.8}
+    .links,.nav-cta .ghost{display:none}
+    .burger{display:block}
+    .nav-in{padding:12px 18px}
+    .nav-in img{height:54px}
+    .nav-cta{gap:8px}
+    .nav-cta .solid{font-size:13.5px;padding:11px 16px}
+    nav:has(.burger[open]) .mobile-menu{display:flex}
+    .hero{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:14px;align-items:stretch;padding-top:clamp(18px,4vw,40px);padding-bottom:28px}
+    .m-top{display:flex;flex-direction:column;gap:12px;grid-column:1 / -1;margin-bottom:-2px}
+    .m-top .back{margin:0;align-self:flex-start}
+    .m-top .eyebrow{font-size:12.5px;letter-spacing:.26em}
+    .m-top .eyebrow::before{width:28px}
+    .hero .col .back,.hero .col .eyebrow{display:none}
+    .hero .col h1{font-size:clamp(32px,8.5vw,124px);line-height:.86;margin:0 0 clamp(10px,2vw,26px)}
+    .hero .col p.lead{font-size:15px;margin-bottom:clamp(14px,2.6vw,34px)}
+    .m-stat{display:block;align-self:flex-start;max-width:230px;margin:0;background:#fff;border-radius:20px;padding:14px 18px;box-shadow:0 18px 40px -20px rgba(19,41,26,.5);font-size:13px;font-weight:600;line-height:1.3;color:var(--muted)}
+    .m-stat b{display:block;font-family:'League Spartan',sans-serif;font-weight:800;font-size:34px;letter-spacing:-.05em;line-height:1;color:var(--green);margin-bottom:4px}
+    .hero .d-ctas,.hero .lead .more{display:none}
+    .m-ctas{display:flex;grid-column:1 / -1;gap:8px;margin-top:2px}
+    .m-ctas .btn{flex:1 1 0;min-width:0;min-height:50px;font-size:14px;padding:0 8px;text-align:center}
+    .arch{order:0;height:auto;min-height:0;max-width:none;width:100%;margin:0;aspect-ratio:.74;align-self:start}
+    .arch .tag{display:none}
+    .reqs,.daily{grid-template-columns:1fr;gap:10px}
+    .req{display:grid;grid-template-columns:44px 1fr;column-gap:14px;row-gap:2px;align-items:center;padding:14px 16px}
+    .req .ic{grid-row:1 / 3;width:44px;height:44px;align-self:center}
+    .req .ic svg{width:24px;height:24px}
+    .req h3{font-size:19px;align-self:end}
+    .req p{font-size:14px;line-height:1.4;align-self:start}
+  }
+
+  /* HELP PAGE */
+  .help{background:var(--acc);color:var(--hink)}
+  .help .in{max-width:1320px;margin:0 auto;padding:clamp(28px,5vw,64px) clamp(18px,3vw,32px) clamp(44px,8vw,104px)}
+  .help .back{color:var(--hink);margin-bottom:clamp(18px,3vw,32px)} .help .back:hover{color:var(--hink);opacity:.7}
+  .help .eb{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .help .eb i{width:32px;height:2px;background:var(--hink)}
+  .help .eb span{font-weight:700;font-size:12.5px;letter-spacing:.32em;text-transform:uppercase}
+  .help h1{font-family:'League Spartan',sans-serif;font-weight:800;font-size:clamp(34px,7vw,104px);line-height:.88;letter-spacing:-.055em;margin:0 0 clamp(28px,5vw,64px);max-width:900px}
+  .help .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(28px,4vw,56px);align-items:start}
+  .help .vis{position:relative;padding-bottom:48px}
+  .help .arch2{height:clamp(380px,48vw,540px);border-radius:999px 999px 26px 26px;overflow:hidden;border:10px solid #fff;background:#fff}
+  .help .arch2 img{width:100%;height:100%;object-fit:cover}
+  .help .cap{position:absolute;left:28px;right:28px;bottom:0;background:#fff;border-radius:20px;padding:24px 26px;box-shadow:0 20px 40px -20px rgba(19,41,26,.45);color:var(--ink)}
+  .help .cap .t{font-family:'League Spartan',sans-serif;font-weight:700;font-size:23px;letter-spacing:-.035em;line-height:1.05;margin-bottom:10px}
+  .help .cap .b{font-size:15px;line-height:1.6;color:rgba(19,41,26,.75)}
+  .help .card{background:#fff;border-radius:28px;padding:clamp(22px,3vw,38px);color:var(--ink)}
+  .help .card h2{font-family:'League Spartan',sans-serif;font-weight:800;font-size:32px;letter-spacing:-.045em;margin:0 0 22px;line-height:1}
+  .help .row{display:flex;gap:14px;align-items:flex-start;padding:14px 18px;border:1.5px solid rgba(19,41,26,.1);border-radius:16px}
+  .help .row.first{padding:16px 18px;background:var(--tint);border:none}
+  .help .row .n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--leaf);color:#fff;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+  .help .row.first .n{background:var(--green)}
+  .help .row div{font-size:16px;line-height:1.5;padding-top:3px}
+  .help .and{font-family:'League Spartan',sans-serif;font-weight:800;font-size:19px;color:var(--leaf);margin:18px 0 4px 4px}
+  .help .atl{font-size:16px;margin:0 0 14px 4px}
+  .help .rows{display:flex;flex-direction:column;gap:10px}
+  .help .imp{font-size:13.5px;line-height:1.55;font-style:italic;color:rgba(19,41,26,.62);margin:22px 0 26px}
+  .help .p{font-size:16px;line-height:1.6;color:rgba(19,41,26,.8);margin:0 0 22px}
+  .help .big{font-family:'League Spartan',sans-serif;font-weight:800;font-size:64px;letter-spacing:-.05em;line-height:1;color:var(--green)}
+  .help .bigl{font-size:15px;font-weight:600;color:var(--muted);margin:4px 0 22px}
+  .help .acts{display:flex;gap:12px;flex-wrap:wrap}
+  .help .go{text-decoration:none;background:var(--green);color:#fff;font-weight:700;font-size:17px;padding:18px 40px;border-radius:999px;display:inline-block;text-align:center}
+  .help .go:hover{background:var(--ink);color:#fff}
+  .help .go.alt{background:#fff;color:var(--green);border:1.5px solid rgba(11,90,36,.3);padding:16.5px 38.5px}
+  .help .go.alt:hover{background:var(--paper);color:var(--green)}
+  @media(max-width:899px){.help .cap{left:14px;right:14px;padding:18px 20px}.help .cap .t{font-size:20px}.help .go{width:100%}}
+  html[dir=rtl] body{font-family:'Tajawal','Figtree',sans-serif}
+  html[dir=rtl] .display,html[dir=rtl] .help h1,html[dir=rtl] .help h2,html[dir=rtl] .help .cap .t,html[dir=rtl] .help .and{font-family:'Tajawal','League Spartan',sans-serif;letter-spacing:0}
+  html[dir=rtl] .help h1{line-height:1.05}
+  html[dir=rtl] .help .eb span{letter-spacing:.08em}
+  html[dir=rtl] .help .imp{font-style:normal}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="index.html"><img src="img/logo.png" alt="Feed a Friend"></a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <div class="dd"><button type="button" class="on">Projects <span>▼</span></button><div class="dd-pop"><div class="dd-box"><a href="project.html?p=food-boxes"><span class="d" style="background:#F5C33B"></span>Food Boxes</a><a href="project.html?p=welcome-baby"><span class="d" style="background:#C45CF0"></span>Welcome Baby</a><a href="project.html?p=community-fridges"><span class="d" style="background:#F9A24B"></span>Community Fridges</a><a href="project.html?p=little-learners"><span class="d" style="background:#4FB3B0"></span>Little Learners</a><a href="project.html?p=books-for-good"><span class="d" style="background:#7FB3E6"></span>Books for Good</a><a href="project.html?p=giving-garden"><span class="d" style="background:#F7AEF8"></span>Giving Garden</a><a href="project.html?p=share-and-care"><span class="d" style="background:#F2705E"></span>Share and Care<em>Soon</em></a></div></div></div>
+      <a href="index.html#volunteer">Volunteer</a>
+      <a href="https://connect.feedafriend.org/fridges">Fridge Map</a>
+      <a href="coming-soon.html?for=businesses">Businesses</a>
+      <a href="coming-soon.html?for=schools">Schools</a>
+    </div>
+    <div class="nav-cta">
+      <a href="help-welcome-baby-ar.html" class="pill ghost">عربي</a>
+      <a href="https://connect.feedafriend.org" target="_blank" class="pill solid">Join Connect</a>
+      <details class="burger"><summary aria-label="Menu"><i></i><i></i><i></i></summary></details>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <div class="m-label">Projects</div>
+    <div class="m-grid"><a class="pj" href="project.html?p=food-boxes"><span class="d" style="background:#F5C33B"></span>Food Boxes</a><a class="pj" href="project.html?p=welcome-baby"><span class="d" style="background:#C45CF0"></span>Welcome Baby</a><a class="pj" href="project.html?p=community-fridges"><span class="d" style="background:#F9A24B"></span>Community Fridges</a><a class="pj" href="project.html?p=little-learners"><span class="d" style="background:#4FB3B0"></span>Little Learners</a><a class="pj" href="project.html?p=books-for-good"><span class="d" style="background:#7FB3E6"></span>Books for Good</a><a class="pj" href="project.html?p=giving-garden"><span class="d" style="background:#F7AEF8"></span>Giving Garden</a><a class="pj" href="project.html?p=share-and-care"><span class="d" style="background:#F2705E"></span>Share and Care</a></div>
+    <a href="index.html#volunteer">Volunteer</a>
+    <a href="https://connect.feedafriend.org/fridges">Fridge Map</a>
+    <a href="coming-soon.html?for=businesses">Businesses</a>
+    <a href="coming-soon.html?for=schools">Schools</a>
+    <a href="help-welcome-baby-ar.html" class="m-ar">عربي</a>
+  </div>
+  </nav>
+
+<main class="help">
+  <div class="in">
+    <a class="back" href="project.html?p=welcome-baby">← Welcome Baby</a>
+    <div class="eb"><i></i><span>Welcome Baby</span></div>
+    <h1>Need a Helping Hand?</h1>
+    <div class="grid">
+      <div class="vis">
+        <div class="arch2"><img src="img/welcome-baby.jpg" alt="Welcome Baby"></div>
+        <div class="cap"><div class="t">A fair start for every baby.</div><div class="b">Welcome Baby care boxes support families with a new baby. The criteria are the same as for a food box, and so is the application.</div></div>
+      </div>
+      <div class="card">
+        <h2>Who can apply?</h2>
+        <div class="row first"><span class="n">1</span><div>Be a group of 2 or more people (we do not provide food for individuals)</div></div>
+        <div class="and">AND</div>
+        <div class="atl">You must meet <strong>at least one</strong> of the following:</div>
+        <div class="rows"><div class="row"><span class="n">2</span><div>Currently out of work</div></div><div class="row"><span class="n">3</span><div>Have not received a salary for at least 2 months</div></div><div class="row"><span class="n">4</span><div>Be a family with children, with a total income of less than 1500 QAR after rent is paid only</div></div></div>
+        <p class="imp"><strong>Important:</strong> Submitting an application does not guarantee a food pack. We review each application carefully and do our best to assist based on need and availability.</p>
+        <p class="p">Welcome Baby uses the same application as Food Boxes.</p>
+        <div class="acts"><a class="go" href="/apply">Apply now</a><a class="go alt" href="/apply">Check my application</a></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot">
+    <div class="l"><img src="img/logo-footer.png" alt="Feed a Friend — Together for Good"><span>© 2026 Feed a Friend</span></div>
+    <a href="https://instagram.com/feed.a.friend" target="_blank">@feed.a.friend</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -260,6 +260,11 @@
   .bz-btn.lime{background:#9BD13B;color:#13291A}.bz-btn.lime:hover{color:#13291A}
   .bz-btn.line{border:1.5px solid rgba(19,41,26,.2);color:#13291A;font-weight:700;padding:0 24px}
   .bz-btn.green{background:#0B5A24;color:#fff}.bz-btn.green:hover{color:#fff}
+  .bz-arches{position:relative;height:540px}
+  .bz-arches .bz-arch{height:100%;width:78%;margin-left:auto}
+  .bz-small{position:absolute;left:0;bottom:-18px;width:46%;height:230px;border-radius:999px 999px 22px 22px;background:#0B5A24;padding:8px;box-shadow:0 18px 40px rgba(11,90,36,.22)}
+  .bz-small div{width:100%;height:100%;border-radius:999px 999px 14px 14px;overflow:hidden}
+  .bz-small img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
   .bz-arch{height:540px;border-radius:999px 999px 26px 26px;background:#9BD13B;padding:clamp(6px,.8vw,10px)}
   .bz-arch div{width:100%;height:100%;border-radius:999px 999px 18px 18px;overflow:hidden}
   .bz-arch img{width:100%;height:100%;object-fit:cover;object-position:35% 40%;filter:saturate(1.18) contrast(1.08) brightness(1.04)}
@@ -312,6 +317,9 @@
   @media(max-width:899px){
     .bz-hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px}
     .bz-arch{height:320px}
+    .bz-arches{height:auto}
+    .bz-arches .bz-arch{width:100%}
+    .bz-small{display:none}
     .bz-ctas.bz-dk{display:none}
     .bz-ctas.bz-mb{display:flex;grid-column:1 / -1;gap:10px}
     .bz-ctas.bz-mb .bz-btn{flex:1 1 0;min-width:0;height:52px;font-size:15px;padding:0 12px;text-align:center}
@@ -331,6 +339,9 @@
     .bz-logos div{width:23%;height:48px}
   }
 
+  .bz-arches .bz-arch{margin-left:0;margin-right:auto}
+  .bz-small{left:auto;right:0}
+
   html[dir=rtl] .bz-hero h1,html[dir=rtl] .bz h2,html[dir=rtl] .bz-card b,html[dir=rtl] .bz-price b,html[dir=rtl] .bz-step b,html[dir=rtl] .bz-step i,html[dir=rtl] .bz-cta b,html[dir=rtl] .bz-fact big{font-family:'Tajawal','League Spartan',sans-serif;letter-spacing:0}
   html[dir=rtl] .bz-hero h1{line-height:1.12}
   html[dir=rtl] .bz h2{line-height:1.2}
@@ -348,7 +359,7 @@
       <div class="dd"><button type="button">المشاريع <span>▼</span></button><div class="dd-pop"><div class="dd-box"><a href="project-ar.html?p=food-boxes"><span class="d" style="background:#F5C33B"></span>صناديق الطعام</a><a href="project-ar.html?p=welcome-baby"><span class="d" style="background:#C45CF0"></span>أهلاً بالمولود</a><a href="project-ar.html?p=community-fridges"><span class="d" style="background:#F9A24B"></span>الثلاجات المجتمعية</a><a href="project-ar.html?p=little-learners"><span class="d" style="background:#4FB3B0"></span>المتعلمون الصغار</a><a href="project-ar.html?p=books-for-good"><span class="d" style="background:#7FB3E6"></span>كتب من أجل الخير</a><a href="project-ar.html?p=giving-garden"><span class="d" style="background:#F7AEF8"></span>حديقة العطاء</a><a href="project-ar.html?p=share-and-care"><span class="d" style="background:#F2705E"></span>شارك و اهتم<em>قريباً</em></a></div></div></div>
       <a href="index-ar.html#volunteer">تطوّع</a>
       <a href="https://connect.feedafriend.org/fridges">خريطة الثلاجات</a>
-      <a href="businesses-ar.html" class="on">الشركات</a>
+      <a href="businesses-ar.html">الشركات</a>
       <a href="coming-soon.html?for=schools">المدارس</a>
     </div>
     <div class="nav-cta">
@@ -363,7 +374,7 @@
     <div class="m-grid"><a class="pj" href="project-ar.html?p=food-boxes"><span class="d" style="background:#F5C33B"></span>صناديق الطعام</a><a class="pj" href="project-ar.html?p=welcome-baby"><span class="d" style="background:#C45CF0"></span>أهلاً بالمولود</a><a class="pj" href="project-ar.html?p=community-fridges"><span class="d" style="background:#F9A24B"></span>الثلاجات المجتمعية</a><a class="pj" href="project-ar.html?p=little-learners"><span class="d" style="background:#4FB3B0"></span>المتعلمون الصغار</a><a class="pj" href="project-ar.html?p=books-for-good"><span class="d" style="background:#7FB3E6"></span>كتب من أجل الخير</a><a class="pj" href="project-ar.html?p=giving-garden"><span class="d" style="background:#F7AEF8"></span>حديقة العطاء</a><a class="pj" href="project-ar.html?p=share-and-care"><span class="d" style="background:#F2705E"></span>شارك و اهتم</a></div>
     <a href="index-ar.html#volunteer">تطوّع</a>
     <a href="https://connect.feedafriend.org/fridges">خريطة الثلاجات</a>
-    <a href="businesses-ar.html" class="on">الشركات</a>
+    <a href="businesses-ar.html">الشركات</a>
     <a href="coming-soon.html?for=schools">المدارس</a>
     <a href="businesses.html" class="m-ar">English</a>
   </div>
@@ -380,7 +391,10 @@
       <a class="bz-btn line" href="#experiences">اكتشف التجارب</a>
     </div>
   </div>
-  <div class="bz-arch"><div><img src="img/businesses/high-five.jpg" alt="متطوع يرتدي مريلة يصفّق بيده مع طفلة في فعالية لفيد أ فريند"></div></div>
+  <div class="bz-arches">
+    <div class="bz-arch"><div><img src="img/businesses/high-five.jpg" alt="متطوع يرتدي مريلة يصفّق بيده مع طفلة في فعالية لفيد أ فريند"></div></div>
+    <div class="bz-small"><div><img src="img/businesses/group.jpg" alt="صورة جماعية لفريق شركة في فعالية لفيد أ فريند"></div></div>
+  </div>
   <div class="bz-ctas bz-mb">
     <a class="bz-btn lime" href="mailto:hello@togetherforgoodevents.com?subject=CSR%20experience%20enquiry">خطّط ليوم CSR</a>
     <a class="bz-btn line" href="#experiences">اكتشف التجارب</a>

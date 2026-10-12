@@ -234,8 +234,15 @@
   .plogos img.udc{height:36px}
   .plogos img.uv{height:52px}
   @media(max-width:899px){
-    .bhero{grid-template-columns:1fr;gap:20px}
-    .bhero .arch{max-width:340px;height:min(420px,92vw);margin:0 auto}
+    .pad{padding-top:clamp(44px,8vw,96px);padding-bottom:clamp(44px,8vw,96px)}
+    .bhero{padding-bottom:28px !important}
+    .bhero .tfg{height:72px;margin:0 0 10px -4px}
+    .ways{grid-template-columns:1fr;gap:10px}
+    .way{display:grid;grid-template-columns:44px 1fr;column-gap:14px;row-gap:2px;align-items:center;padding:14px 16px}
+    .way .ic{grid-row:1 / 3;width:44px;height:44px;align-self:center}
+    .way .ic svg{width:24px;height:24px}
+    .way h3{font-size:19px;align-self:end}
+    .way p{font-size:14px;line-height:1.4;align-self:start}
     .team{grid-template-columns:1fr}
     .plogos{gap:12px 28px}
     .plogos img{height:40px;max-width:120px}
@@ -271,13 +278,15 @@
   </div>
   </nav>
 
-<header class="wrap bhero">
+<header class="wrap hero bhero">
+  <div class="m-top"><div class="eyebrow" style="--rule:#9BD13B">For businesses</div></div>
   <div class="col">
     <div class="eyebrow" style="--rule:#9BD13B">For businesses</div>
     <h1 class="display">Making a Difference Together</h1>
     <img class="tfg" src="img/tfg-logo.png" alt="Together for Good — معاً للأفضل" width="600" height="516">
     <p class="lead">In partnership with Together for Good Events, we offer transformational, hands-on CSR experiences for your team.</p>
-    <div class="ctas">
+    <div class="m-stat"><b>47,000+</b>people supported across six programmes</div>
+    <div class="ctas d-ctas">
       <a class="btn orange" href="mailto:hello@togetherforgoodevents.com?subject=Business%20partnership%20enquiry">Partner with us <span>→</span></a>
       <a class="btn line" href="#partners">Our partners</a>
     </div>
@@ -285,6 +294,10 @@
   <div class="arch big">
     <div class="frame"><div><img src="img/businesses/high-five.jpg" alt="A volunteer in an apron high-fives a child at a Feed a Friend session" style="object-position:35% 40%"></div></div>
     <div class="tag"><b>47,000+</b><span>people supported across six programmes</span></div>
+  </div>
+  <div class="m-ctas">
+    <a class="btn orange" href="mailto:hello@togetherforgoodevents.com?subject=Business%20partnership%20enquiry">Partner with us</a>
+    <a class="btn line" href="#partners">Our partners</a>
   </div>
 </header>
 

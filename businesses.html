@@ -216,6 +216,7 @@
   .bz-hero p.lead strong{color:#13291A}
   .bz-ctas{display:flex;gap:10px;flex-wrap:wrap}
   .bz-btn{text-decoration:none;font-weight:800;font-size:16px;padding:0 28px;height:54px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;white-space:nowrap}
+  .bz-ctas.bz-mb{display:none}
   .bz-btn.lime{background:#9BD13B;color:#13291A}.bz-btn.lime:hover{color:#13291A}
   .bz-btn.line{border:1.5px solid rgba(19,41,26,.2);color:#13291A;font-weight:700;padding:0 24px}
   .bz-btn.green{background:#0B5A24;color:#fff}.bz-btn.green:hover{color:#fff}
@@ -236,7 +237,7 @@
   .bz-price .l{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
   .bz-price b{font-family:'League Spartan',sans-serif;font-weight:700;font-size:20px;letter-spacing:-.03em;color:#0B5A24}
   .bz-price span{font-size:15px;line-height:1.5;color:rgba(19,41,26,.75)}
-  .bz-price a{text-decoration:none;border:1.5px solid rgba(19,41,26,.2);color:#13291A;font-weight:700;font-size:15px;padding:0 20px;height:44px;display:inline-flex;align-items:center;border-radius:999px;white-space:nowrap}
+  .bz-price a{text-decoration:none;background:#9BD13B;color:#13291A;font-weight:800;font-size:15px;padding:0 20px;height:44px;display:inline-flex;align-items:center;border-radius:999px;white-space:nowrap}
   .bz-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,24px)}
   .bz-step{display:flex;gap:16px;align-items:flex-start;padding-top:18px;border-top:2px solid #0B5A24}
   .bz-step i{font-style:normal;font-family:'League Spartan',sans-serif;font-weight:800;font-size:44px;line-height:.85;letter-spacing:-.05em;color:#3FA34A}
@@ -271,12 +272,15 @@
   @media(max-width:899px){
     .bz-hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px}
     .bz-arch{height:320px}
-    .bz-ctas{flex-wrap:nowrap;gap:8px}
-    .bz-ctas .bz-btn{flex:1 1 0;min-width:0;height:50px;font-size:13.5px;padding:0 8px;text-align:center}
+    .bz-ctas.bz-dk{display:none}
+    .bz-ctas.bz-mb{display:flex;grid-column:1 / -1;gap:10px}
+    .bz-ctas.bz-mb .bz-btn{flex:1 1 0;min-width:0;height:52px;font-size:15px;padding:0 12px;text-align:center}
+    .bz-hero .col{justify-content:flex-start}
     .bz-exp{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
     .bz-card{min-height:150px;padding:12px 10px 12px;border-radius:16px;gap:8px}
-    .bz-card small{font-size:9.5px;letter-spacing:.08em}
-    .bz-card b{font-size:15px}
+    .bz-card small{font-size:9.5px;letter-spacing:.08em;height:2.7em;overflow:hidden}
+    .bz-card div{margin-top:0;gap:0}
+    .bz-card b{font-size:15px;line-height:1.1}
     .bz-card span{font-size:11.5px;line-height:1.35;margin-top:5px}
     .bz-steps{grid-template-columns:1fr}
     .bz-tfg{grid-template-columns:1fr}
@@ -321,12 +325,16 @@
     <div class="bz-eyebrow">For Businesses</div>
     <h1>Making a Difference Together</h1>
     <p class="lead">In partnership with <strong>Together for Good Events</strong>, we create transformational, hands-on CSR experiences for your team — packing, building and delivering real support to friends in need across Qatar.</p>
-    <div class="bz-ctas">
+    <div class="bz-ctas bz-dk">
       <a class="bz-btn lime" href="mailto:hello@togetherforgoodevents.com?subject=CSR%20experience%20enquiry">Plan a CSR day</a>
       <a class="bz-btn line" href="#experiences">See experiences</a>
     </div>
   </div>
   <div class="bz-arch"><div><img src="img/businesses/high-five.jpg" alt="A volunteer in an apron high-fives a child at a Feed a Friend session"></div></div>
+  <div class="bz-ctas bz-mb">
+    <a class="bz-btn lime" href="mailto:hello@togetherforgoodevents.com?subject=CSR%20experience%20enquiry">Plan a CSR day</a>
+    <a class="bz-btn line" href="#experiences">See experiences</a>
+  </div>
 </section>
 
 <section class="bz" id="experiences">

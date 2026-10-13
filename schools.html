@@ -336,10 +336,27 @@
   .sc-camp .bd{margin-top:auto}
   .sc-camp .go{display:inline-flex;align-items:center;align-self:flex-start;text-decoration:none;background:#0B5A24;color:#fff;font-weight:800;font-size:14px;padding:0 18px;height:40px;border-radius:999px;margin-top:14px}
   .sc-camp .go:hover{color:#fff}
+  .sc-split p.sc-price{font-size:16px;font-weight:600;color:#fff;margin:0;max-width:none}
+  .sc-split p.sc-price .sep{font-style:normal}
+  .sc-split p.sc-price b{font-family:'League Spartan',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em;color:#9BD13B}
+  .sc-cm .row .a{background:none;padding:0;border-radius:0;font-family:'League Spartan',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.02em;color:#9BD13B}
+  .sc-toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#13291A;color:#fff;border-radius:16px;padding:14px 20px;font-size:15px;line-height:1.4;max-width:min(92vw,440px);text-align:center;box-shadow:0 18px 40px -16px rgba(19,41,26,.6);transition:opacity .25s,transform .25s;z-index:100}
+  .sc-toast.on{opacity:1;transform:translate(-50%,0)}
+  .sc-toast b{color:#9BD13B}
   @media(max-width:899px){
-    .sc-split,.sc-split.r,.sc-cm,.sc-camp{grid-template-columns:1fr}
-    .sc-split.r .tx{order:0}
-    .sc-split .ph{min-height:220px}
+    .sc-cm,.sc-camp{grid-template-columns:1fr}
+    .sc-split{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);border-radius:20px}
+    .sc-split.r{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+    .sc-split .tx{padding:20px 14px;gap:10px}
+    .sc-split h2{font-size:clamp(24px,6.4vw,34px)}
+    .sc-split .bz-eyebrow{font-size:11px;letter-spacing:.22em}
+    .sc-split .bz-eyebrow::before{width:20px}
+    .sc-split p{font-size:13.5px;line-height:1.45}
+    .sc-split p.sc-price{white-space:normal;font-size:12.5px;line-height:1.3}
+    .sc-split p.sc-price .sep{display:none}
+    .sc-split p.sc-price b{display:block;white-space:nowrap;font-size:18px}
+    .sc-split .sc-btn{height:42px;padding:0 16px;font-size:13.5px;margin-top:2px;white-space:normal;line-height:1.15;text-align:left}
+    .sc-split .ph{min-height:0}
     .sc-camp .bz-card{min-height:170px;padding:20px 18px 18px;border-radius:22px;gap:12px}
     .sc-camp .bz-card b{font-size:22px}
     .sc-camp .bz-card span{font-size:14px;margin-top:8px}
@@ -383,7 +400,7 @@
     <h1>Learning Through Giving</h1>
     <p class="lead">Hands-on service learning for students of every age. In partnership with <strong>Together for Good Events</strong>, we bring workshops into your school, help you host a community fridge, and run campaigns your students can lead.</p>
     <div class="bz-ctas bz-dk">
-      <a class="bz-btn lime" href="mailto:salaam@feedafriend.org?subject=School%20partnership%20enquiry">Get your school involved</a>
+      <a class="bz-btn lime" href="#get-involved">Get your school involved</a>
       <a class="bz-btn line" href="#workshops">See ways to help</a>
     </div>
   </div>
@@ -392,7 +409,7 @@
     <div class="bz-small"><div><img src="img/schools/hero-box.jpg" alt="A student holding a hand-decorated glass jar lantern at a Feed a Friend event" style="object-position:50% 30%;transform:scale(1.7);transform-origin:50% 30%"></div></div>
   </div>
   <div class="bz-ctas bz-mb">
-    <a class="bz-btn lime" href="mailto:salaam@feedafriend.org?subject=School%20partnership%20enquiry">Get your school involved</a>
+    <a class="bz-btn lime" href="#get-involved">Get your school involved</a>
     <a class="bz-btn line" href="#workshops">See ways to help</a>
   </div>
 </section>
@@ -403,7 +420,7 @@
       <div class="bz-eyebrow">Workshops</div>
       <h2>In-School Workshops</h2>
       <p>We come to your school with interactive workshops on food insecurity, kindness and giving — run in partnership with Together for Good Events.</p>
-      <div class="sc-tags"><span class="a">QAR 100 per student</span><span class="b">with Together for Good Events</span></div>
+      <p class="sc-price"><b>QAR 100 per student</b><i class="sep"> · </i>with Together for Good Events</p>
       <a class="sc-btn" href="mailto:salaam@feedafriend.org?subject=School%20workshop%20enquiry">Book a workshop →</a>
     </div>
     <div class="ph"><img src="img/schools/workshop.jpg" alt="A Feed a Friend workshop in a classroom" style="object-position:50% 25%" loading="lazy"></div>
@@ -416,7 +433,7 @@
       <div class="bz-eyebrow">Community Fridges</div>
       <h2>Install a Community Fridge</h2>
       <p>Host a Feed a Friend double-door fridge outside your school, open to everyone. Once your municipality approves, we provide the fridge and your student leadership team keeps it stocked, cleaned and checked every day — a lasting way to give back to your neighbourhood.</p>
-      <a class="sc-btn" href="mailto:salaam@feedafriend.org?subject=Install%20a%20community%20fridge%20at%20our%20school">Ask about hosting a fridge →</a>
+      <a class="sc-btn" href="install-a-fridge.html#school">How hosting a fridge works →</a>
     </div>
     <div class="ph"><img src="img/schools/fridge.jpg" alt="A Feed a Friend community fridge at a school" style="object-position:50% 45%" loading="lazy"></div>
   </div>
@@ -505,13 +522,27 @@
   </div>
 </section>
 
-<section class="bz" style="padding-bottom:clamp(40px,6vw,80px)">
+<section class="bz" id="get-involved" style="padding-bottom:clamp(40px,6vw,80px)">
   <div class="bz-cta">
     <div><b>Ready to get your school involved?</b><span>Tell us about your school and year groups, and we'll suggest the best fit.</span></div>
     <a class="bz-btn green" href="mailto:salaam@feedafriend.org?subject=School%20partnership%20enquiry">Get in touch →</a>
   </div>
 </section>
 </main>
+<div class="sc-toast" id="scToast" role="status"></div>
+<script>
+(function(){
+  var t=document.getElementById('scToast'),timer;
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href^="mailto:"]'); if(!a) return;
+    var addr=a.getAttribute('href').replace('mailto:','').split('?')[0];
+    try{navigator.clipboard&&navigator.clipboard.writeText(addr)}catch(_){}
+    t.innerHTML='Opening your email app. If nothing opens, email us at <b>'+addr+'</b> (copied).';
+    t.classList.add('on'); clearTimeout(timer); timer=setTimeout(function(){t.classList.remove('on')},6000);
+  });
+})();
+</script>
+
 
 <footer>
   <div class="foot">

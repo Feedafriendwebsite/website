@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png"><link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Schools | Feed a Friend Qatar</title>
+<meta name="description" content="Hands-on service learning for students of every age: in-school workshops, community fridges at your school, the Changemakers Programme and student-led drives. Run with Together for Good Events.">
+<meta property="og:title" content="For Schools | Feed a Friend Qatar">
+<meta property="og:description" content="Workshops, community fridges and student-led drives for schools in Qatar.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Feed a Friend Qatar">
+<meta property="og:image" content="https://feedafriend.org/img/og.jpg?v=3">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=League+Spartan:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#0B5A24; --leaf:#3FA34A; --ink:#13291A; --paper:#FAFAF7;
+    --fridge:#F9A24B; --sun:#F5C33B; --line:rgba(19,41,26,0.08);
+    --muted:rgba(19,41,26,0.72);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{font-family:'Figtree',sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+  a{color:var(--green)} a:hover{color:var(--leaf)}
+  ::selection{background:var(--sun);color:var(--ink)}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1320px;margin:0 auto;padding-left:clamp(18px,3vw,32px);padding-right:clamp(18px,3vw,32px)}
+  .display{font-family:'League Spartan',sans-serif;font-weight:800;letter-spacing:-0.055em;line-height:0.9;color:var(--green)}
+  .eyebrow{display:flex;align-items:center;gap:12px;font-weight:700;font-size:12.5px;letter-spacing:0.3em;text-transform:uppercase}
+  .eyebrow::before{content:"";width:32px;height:2px;background:var(--rule,var(--fridge));flex:none}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:60;background:rgba(250,250,247,0.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:1320px;margin:0 auto;padding:12px clamp(18px,3vw,32px);display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .nav-in img{height:54px;width:auto}
+  .links{display:flex;gap:4px 24px;flex-wrap:wrap;justify-content:center;align-items:center}
+  .links a{text-decoration:none;color:var(--ink);font-weight:600;font-size:14.5px;white-space:nowrap}
+  .links a.on{color:var(--green);font-weight:800}
+  .nav-cta{display:flex;align-items:center;gap:10px;flex:none}
+  .pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;border-radius:999px;font-weight:700;font-size:14px;padding:11px 22px;white-space:nowrap}
+  .pill.solid{background:var(--green);color:#fff} .pill.solid:hover{color:#fff;background:#08461c}
+  .pill.ghost{color:var(--green);border:1.5px solid rgba(11,90,36,0.25);padding:8px 14px;font-size:13.5px}
+  .burger{display:none}
+  .burger summary{list-style:none;width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(19,41,26,0.18);background:#fff;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px}
+  .burger summary::-webkit-details-marker{display:none}
+  .burger summary i{width:18px;height:2px;border-radius:2px;background:var(--ink)}
+  .mobile-menu{display:none;border-top:1px solid var(--line);padding:8px 20px 24px;flex-direction:column}
+  .mobile-menu a{text-decoration:none;color:var(--ink);font-family:'League Spartan',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.03em;padding:12px 4px;border-bottom:1px solid var(--line)}
+  .dd{position:relative}
+  .dd button{font-family:inherit;background:none;border:none;padding:8px 0;cursor:pointer;color:var(--green);font-weight:800;font-size:14.5px;display:flex;align-items:center;gap:6px;white-space:nowrap}
+  .dd button span{font-size:10px;transition:transform .2s}
+  .dd:hover button span{transform:rotate(180deg)}
+  .dd-pop{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);padding-top:10px;z-index:70}
+  .dd:hover .dd-pop,.dd:focus-within .dd-pop{display:block}
+  .dd-box{background:#fff;border-radius:20px;padding:10px;box-shadow:0 24px 50px -20px rgba(19,41,26,.45);border:1px solid var(--line);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;width:440px}
+  .dd-box a{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;font-weight:700;font-size:14.5px;white-space:nowrap}
+  .dd-box a:hover{background:var(--paper);color:var(--ink)}
+  .dd-box em{font-style:normal;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(19,41,26,.5)}
+  .d{width:12px;height:12px;border-radius:50%;flex:none;display:inline-block}
+  .m-label{font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(19,41,26,.55);padding:18px 4px 8px}
+  .m-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .mobile-menu a.pj{display:flex;align-items:center;gap:10px;padding:12px;border-radius:14px;background:#fff;font-family:'Figtree',sans-serif;font-weight:700;font-size:14px;letter-spacing:0;min-height:44px;border-bottom:none}
+  .mobile-menu a.m-ar{align-self:flex-start;margin-top:20px;color:var(--green);border:1.5px solid rgba(11,90,36,.25);border-radius:999px;padding:10px 18px;font-family:'Figtree',sans-serif;font-weight:700;font-size:14px;letter-spacing:0;border-bottom:1.5px solid rgba(11,90,36,.25)}
+  .mobile-menu{max-height:calc(100vh - 78px);overflow-y:auto}
+  .m-top,.m-stat,.m-ctas{display:none}
+
+  /* HERO */
+  .hero{display:grid;grid-template-columns:1.15fr 0.85fr;gap:clamp(24px,4vw,64px);align-items:center;padding-top:clamp(18px,4vw,40px);padding-bottom:clamp(36px,6vw,80px)}
+  .back{display:inline-flex;gap:8px;font-weight:700;font-size:14px;text-decoration:none;margin-bottom:clamp(20px,3vw,36px)}
+  .hero h1{font-size:clamp(40px,8vw,112px);margin:22px 0 clamp(12px,2vw,26px);text-wrap:balance}
+  .hero p.lead{font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:var(--muted);max-width:560px;margin-bottom:clamp(18px,2.6vw,32px);text-wrap:pretty}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:800;font-size:16px;min-height:54px;padding:0 28px;border-radius:999px;transition:transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px -12px rgba(19,41,26,.5)}
+  .btn.orange{background:var(--fridge);color:var(--ink)} .btn.orange:hover{color:var(--ink)}
+  .btn.green{background:var(--green);color:#fff} .btn.green:hover{color:#fff}
+  .btn.line{border:1.5px solid rgba(19,41,26,.2);color:var(--ink);font-weight:700}
+  .arch{position:relative;height:clamp(360px,52vw,620px);max-width:440px;width:100%;margin-left:auto}
+  .arch .frame{position:absolute;inset:0;border-radius:999px 999px 26px 26px;background:var(--fridge);padding:10px}
+  .arch .frame div{width:100%;height:100%;border-radius:999px 999px 18px 18px;overflow:hidden}
+  .arch img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1) contrast(1.04)}
+  .arch .tag{position:absolute;left:-10px;bottom:22px;background:#fff;border-radius:20px;padding:14px 18px;box-shadow:0 18px 40px -20px rgba(19,41,26,.5);max-width:230px}
+  .arch .tag b{display:block;font-family:'League Spartan',sans-serif;font-weight:800;font-size:34px;letter-spacing:-.05em;line-height:1;color:var(--green)}
+  .arch .tag span{font-size:13px;font-weight:600;color:var(--muted);line-height:1.3;display:block;margin-top:4px}
+
+  /* SECTIONS */
+  section.band{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .pad{padding-top:clamp(44px,8vw,96px);padding-bottom:clamp(44px,8vw,96px)}
+  h2.display{font-size:clamp(32px,5.5vw,76px);margin:16px 0 clamp(24px,4vw,44px);text-wrap:balance}
+  .sub{font-size:clamp(15px,1.4vw,18px);color:var(--muted);max-width:640px;margin:-14px 0 clamp(24px,4vw,40px)}
+
+  /* requirements */
+  .reqs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:clamp(10px,1.5vw,20px)}
+  .req{background:#fff;border:1px solid rgba(19,41,26,.06);border-radius:clamp(18px,2vw,26px);padding:clamp(18px,2vw,28px);display:flex;flex-direction:column;gap:10px}
+  .req .ic{width:52px;height:52px;border-radius:50%;background:var(--fridge);display:grid;place-items:center}
+  .req .ic svg{width:28px;height:28px;stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .req h3,.card h3{font-family:'League Spartan',sans-serif;font-weight:700;font-size:clamp(20px,2vw,26px);letter-spacing:-.03em;line-height:1.05}
+  .req p{font-size:15px;color:var(--muted)}
+  .note{margin-top:clamp(16px,2vw,24px);background:var(--ink);color:#fff;border-radius:22px;padding:clamp(16px,2vw,24px) clamp(18px,2.4vw,30px);display:flex;gap:16px;align-items:flex-start}
+  .note b{color:var(--sun)} .note p{font-size:15.5px;line-height:1.55}
+  .dot{flex:none;width:12px;height:12px;border-radius:50%;background:var(--sun);margin-top:7px}
+
+  /* routes */
+  .routes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px);align-items:stretch}
+  @media(max-width:900px){.routes{grid-template-columns:1fr}}
+  .card{border-radius:clamp(24px,3vw,36px);padding:clamp(22px,3vw,44px);display:flex;flex-direction:column;gap:18px}
+  .card.home{background:#fff;border:1px solid rgba(19,41,26,.08);box-shadow:inset 0 8px 0 var(--fridge)}
+  .card.school{background:var(--green);color:#fff}
+  .card .who{font-weight:800;font-size:12.5px;letter-spacing:.28em;text-transform:uppercase}
+  .card.home .who{color:#c26a0a} .card.school .who{color:var(--sun)}
+  .card h3{font-size:clamp(30px,3.6vw,50px);letter-spacing:-.05em;line-height:.95}
+  .card.home h3{color:var(--green)}
+  .card .intro{font-size:16.5px;line-height:1.55}
+  .card.home .intro{color:var(--muted)} .card.school .intro{color:rgba(255,255,255,.85)}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .fact{border-radius:18px;padding:14px 16px;font-size:14px;line-height:1.35}
+  .fact b{display:block;font-family:'League Spartan',sans-serif;font-size:19px;letter-spacing:-.03em;margin-bottom:2px}
+  .card.home .fact{background:var(--paper)} .card.school .fact{background:rgba(255,255,255,.12)}
+  .steps{list-style:none;counter-reset:s;display:flex;flex-direction:column;gap:14px;margin-top:4px}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+  .steps li::before{content:counter(s);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-family:'League Spartan',sans-serif;font-weight:800;font-size:18px}
+  .card.home .steps li::before{background:var(--fridge);color:var(--ink)}
+  .card.school .steps li::before{background:var(--sun);color:var(--ink)}
+  .steps b{display:block;font-size:17px;margin-bottom:2px}
+  .steps span{font-size:15px;line-height:1.5}
+  .card.home .steps span{color:var(--muted)} .card.school .steps span{color:rgba(255,255,255,.82)}
+  .flag{border-radius:16px;padding:12px 16px;font-size:14.5px;font-weight:600;line-height:1.4}
+  .card.home .flag{background:#FFF1DE;color:#7a3f00}
+  .card.school .flag{background:rgba(245,195,59,.18);color:#FFE9A8}
+  .card .push{margin-top:auto;padding-top:6px}
+
+  /* site diagram */
+  .diagram{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(20px,4vw,56px);align-items:center}
+  @media(max-width:860px){.diagram{grid-template-columns:1fr}}
+  .diagram svg{width:100%;height:auto;background:#fff;border:1px solid rgba(19,41,26,.06);border-radius:28px}
+  .legend{display:flex;flex-direction:column;gap:14px;list-style:none}
+  .legend li{display:grid;grid-template-columns:32px 1fr;gap:12px;font-size:16px;align-items:start}
+  .legend em{font-style:normal;width:32px;height:32px;border-radius:50%;background:var(--fridge);display:grid;place-items:center;font-family:'League Spartan',sans-serif;font-weight:800}
+  .legend b{display:block}
+  .legend span{color:var(--muted);font-size:15px}
+
+  /* care */
+  .care{background:#FFF4E4}
+  .daily{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:clamp(10px,1.5vw,20px)}
+  .daily .req .ic{background:var(--green)}
+  .daily .req .ic svg{stroke:#fff}
+  .rota{margin-top:clamp(24px,4vw,44px);background:#fff;border-radius:28px;border:1px solid rgba(19,41,26,.06);padding:clamp(18px,3vw,36px)}
+  .rota h3{font-family:'League Spartan',sans-serif;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.04em;color:var(--green);margin-bottom:6px}
+  .rota p{color:var(--muted);font-size:15px;margin-bottom:18px;max-width:640px}
+  .week{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+  .day{border-radius:18px;background:var(--paper);padding:14px 10px;text-align:center;border:1.5px dashed rgba(19,41,26,.2)}
+  .day small{display:block;font-weight:800;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(19,41,26,.55)}
+  .day b{display:block;font-family:'League Spartan',sans-serif;font-size:clamp(17px,2vw,24px);letter-spacing:-.03em;color:var(--green);margin-top:4px}
+  .day:nth-child(odd){background:#fff4dc}
+  .eg{font-size:12.5px;color:rgba(19,41,26,.55);margin-top:12px}
+  @media(max-width:560px){.week{grid-template-columns:repeat(2,1fr)}}
+
+  /* cta band */
+  .cta-band{background:var(--green);color:#fff}
+  .cta-band .display{color:#fff}
+  .cta-grid{display:flex;justify-content:space-between;align-items:center;gap:28px;flex-wrap:wrap}
+  .cta-band p{color:rgba(255,255,255,.82);font-size:17px;max-width:520px}
+
+  footer{background:var(--green);color:#fff;border-top:1px solid rgba(255,255,255,.12)}
+  .foot{max-width:1320px;margin:0 auto;padding:clamp(12px,2vw,24px) clamp(18px,3vw,32px);display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .foot img{height:clamp(32px,4vw,48px);width:auto}
+  .foot .l{display:flex;align-items:center;gap:14px}
+  .foot span{font-size:13px;color:rgba(255,255,255,.6);white-space:nowrap}
+  .foot a{text-decoration:none;background:var(--leaf);color:#fff;border-radius:999px;padding:0 14px;height:40px;display:flex;align-items:center;font-weight:700;font-size:13px;white-space:nowrap}
+  @media(max-width:520px){.foot span{display:none}}
+  /* MOBILE: mirrors the other project pages */
+  @media(max-width:899px){
+    body{zoom:.8}
+    .links,.nav-cta .ghost{display:none}
+    .burger{display:block}
+    .nav-in{padding:12px 18px}
+    .nav-in img{height:54px}
+    .nav-cta{gap:8px}
+    .nav-cta .solid{font-size:13.5px;padding:11px 16px}
+    nav:has(.burger[open]) .mobile-menu{display:flex}
+    .hero{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:14px;align-items:stretch;padding-top:clamp(18px,4vw,40px);padding-bottom:28px}
+    .m-top{display:flex;flex-direction:column;gap:12px;grid-column:1 / -1;margin-bottom:-2px}
+    .m-top .back{margin:0;align-self:flex-start}
+    .m-top .eyebrow{font-size:12.5px;letter-spacing:.26em}
+    .m-top .eyebrow::before{width:28px}
+    .hero .col .back,.hero .col .eyebrow{display:none}
+    .hero .col h1{font-size:clamp(32px,8.5vw,124px);line-height:.86;margin:0 0 clamp(10px,2vw,26px)}
+    .hero .col p.lead{font-size:15px;margin-bottom:clamp(14px,2.6vw,34px)}
+    .m-stat{display:block;align-self:flex-start;max-width:230px;margin:0;background:#fff;border-radius:20px;padding:14px 18px;box-shadow:0 18px 40px -20px rgba(19,41,26,.5);font-size:13px;font-weight:600;line-height:1.3;color:var(--muted)}
+    .m-stat b{display:block;font-family:'League Spartan',sans-serif;font-weight:800;font-size:34px;letter-spacing:-.05em;line-height:1;color:var(--green);margin-bottom:4px}
+    .hero .d-ctas,.hero .lead .more{display:none}
+    .m-ctas{display:flex;grid-column:1 / -1;gap:8px;margin-top:2px}
+    .m-ctas .btn{flex:1 1 0;min-width:0;min-height:50px;font-size:14px;padding:0 8px;text-align:center}
+    .arch{order:0;height:auto;min-height:0;max-width:none;width:100%;margin:0;aspect-ratio:.74;align-self:start}
+    .arch .tag{display:none}
+    .reqs,.daily{grid-template-columns:1fr;gap:10px}
+    .req{display:grid;grid-template-columns:44px 1fr;column-gap:14px;row-gap:2px;align-items:center;padding:14px 16px}
+    .req .ic{grid-row:1 / 3;width:44px;height:44px;align-self:center}
+    .req .ic svg{width:24px;height:24px}
+    .req h3{font-size:19px;align-self:end}
+    .req p{font-size:14px;line-height:1.4;align-self:start}
+  }
+
+  /* BUSINESSES PAGE (from the Claude Design file) */
+  body{background:#F4EFE4}
+  nav{background:rgba(244,239,228,.86)}
+  .bz{max-width:1320px;margin:0 auto;padding:0 clamp(18px,3vw,32px) clamp(32px,5vw,64px)}
+  .bz-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:18px;font-weight:700;font-size:12.5px;letter-spacing:.32em;text-transform:uppercase;color:#13291A}
+  .bz-eyebrow::before{content:"";width:32px;height:2px;background:#9BD13B;flex:none}
+  .bz-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:56px;align-items:stretch;padding-top:clamp(24px,4vw,56px)}
+  .bz-hero .col{display:flex;flex-direction:column;justify-content:center}
+  .bz-hero h1{font-family:'League Spartan',sans-serif;font-weight:800;font-size:clamp(34px,6.6vw,96px);line-height:.88;letter-spacing:-.055em;margin:0 0 clamp(12px,2vw,24px);color:#0B5A24;text-wrap:balance}
+  .bz-hero p.lead{font-size:clamp(15px,1.5vw,19px);line-height:1.55;color:rgba(19,41,26,.78);max-width:520px;margin:0 0 clamp(16px,2.6vw,32px);text-wrap:pretty}
+  .bz-hero p.lead strong{color:#13291A}
+  .bz-ctas{display:flex;gap:10px;flex-wrap:wrap}
+  .bz-btn{text-decoration:none;font-weight:800;font-size:16px;padding:0 28px;height:54px;display:inline-flex;align-items:center;justify-content:center;border-radius:999px;white-space:nowrap}
+  .bz-ctas.bz-mb{display:none}
+  .bz-btn.lime{background:#9BD13B;color:#13291A}.bz-btn.lime:hover{color:#13291A}
+  .bz-btn.line{border:1.5px solid rgba(19,41,26,.2);color:#13291A;font-weight:700;padding:0 24px}
+  .bz-btn.green{background:#0B5A24;color:#fff}.bz-btn.green:hover{color:#fff}
+  .bz-arches{position:relative;height:540px}
+  .bz-arches .bz-arch{height:100%;width:68%;margin-left:6%}
+  .bz-small{position:absolute;right:0;bottom:70px;width:240px;height:210px;border-radius:24px;background:#fff;padding:8px;box-shadow:0 18px 40px rgba(19,41,26,.18)}
+  .bz-small div{width:100%;height:100%;border-radius:16px;overflow:hidden}
+  .bz-small img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+  .bz-arch{height:540px;border-radius:999px 999px 26px 26px;background:#9BD13B;padding:clamp(6px,.8vw,10px)}
+  .bz-arch div{width:100%;height:100%;border-radius:999px 999px 18px 18px;overflow:hidden}
+  .bz-arch img{width:100%;height:100%;object-fit:cover;object-position:35% 40%;filter:saturate(1.18) contrast(1.08) brightness(1.04)}
+  .bz-panel{background:#fff;border-radius:clamp(20px,3vw,28px);padding:clamp(24px,4vw,52px) clamp(18px,4vw,56px);display:flex;flex-direction:column;gap:26px}
+  .bz-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+  .bz h2{font-family:'League Spartan',sans-serif;font-weight:800;font-size:clamp(30px,4.4vw,56px);line-height:.9;letter-spacing:-.05em;margin:0;color:#0B5A24}
+  .bz-head p{font-size:16px;line-height:1.55;color:rgba(19,41,26,.75);margin:0;max-width:400px}
+  .bz-exp{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+  .bz-card{color:#fff;border-radius:22px;padding:20px 18px 18px;display:flex;flex-direction:column;gap:12px;min-height:210px}
+  .bz-card small{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(19,41,26,.7)}
+  .bz-card div{margin-top:auto;display:flex;flex-direction:column}
+  .bz-card b{font-family:'League Spartan',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.03em;line-height:1.05}
+  .bz-card span{font-size:14px;font-weight:600;line-height:1.45;color:rgba(19,41,26,.75);margin-top:8px}
+  .bz-price{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:20px;border-top:1px solid rgba(19,41,26,.1)}
+  .bz-price .l{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .bz-price b{font-family:'League Spartan',sans-serif;font-weight:700;font-size:20px;letter-spacing:-.03em;color:#0B5A24}
+  .bz-price span{font-size:15px;line-height:1.5;color:rgba(19,41,26,.75)}
+  .bz-price a{text-decoration:none;background:#9BD13B;color:#13291A;font-weight:800;font-size:15px;padding:0 20px;height:44px;display:inline-flex;align-items:center;border-radius:999px;white-space:nowrap}
+  .bz-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,24px)}
+  .bz-step{display:flex;gap:16px;align-items:flex-start;padding-top:18px;border-top:2px solid #0B5A24}
+  .bz-step i{font-style:normal;font-family:'League Spartan',sans-serif;font-weight:800;font-size:44px;line-height:.85;letter-spacing:-.05em;color:#3FA34A}
+  .bz-step b{display:block;font-family:'League Spartan',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.03em;line-height:1.1;color:#0B5A24}
+  .bz-step span{display:block;font-size:15px;line-height:1.5;color:rgba(19,41,26,.75);margin-top:6px}
+  .bz-tfg{background:#0B5A24;color:#fff;border-radius:clamp(20px,3vw,28px);padding:clamp(24px,4vw,52px) clamp(18px,4vw,56px);display:grid;grid-template-columns:300px minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+  .bz-tfg img{width:100%;max-width:300px;height:auto;display:block}
+  .bz-tfg .body{display:flex;flex-direction:column;gap:18px}
+  .bz-tfg .bz-eyebrow{color:#fff;margin-bottom:0}
+  .bz-tfg h2{color:#fff}
+  .bz-tfg p{font-size:clamp(15px,1.4vw,17px);line-height:1.55;color:rgba(255,255,255,.85);margin:0;max-width:560px;text-wrap:pretty}
+  .bz-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:4px}
+  .bz-fact{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:16px 18px}
+  .bz-fact big{display:block;font-family:'League Spartan',sans-serif;font-weight:800;font-size:34px;line-height:1;letter-spacing:-.05em;color:#9BD13B}
+  .bz-fact small{display:block;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+  .bz-fact em{display:block;font-style:normal;font-size:14px;font-weight:600;line-height:1.4;margin-top:6px}
+  .bz-fact strong{display:block;font-size:15px;font-weight:700;line-height:1.35;margin-top:6px}
+  .bz-fact .cr{font-family:'League Spartan',sans-serif;font-weight:700;font-size:22px;letter-spacing:-.02em;margin-top:6px}
+  .bz-part{background:#fff;border-radius:clamp(20px,3vw,28px);padding:clamp(24px,4vw,52px) clamp(18px,4vw,56px);display:grid;grid-template-columns:340px minmax(0,1fr);gap:clamp(20px,4vw,56px)}
+  .bz-part .t{display:flex;flex-direction:column;gap:18px}
+  .bz-part .t .bz-eyebrow{margin-bottom:0}
+  .bz-part h2{font-size:clamp(30px,4.4vw,48px);line-height:.92}
+  .bz-part p{margin:0;font-size:16px;line-height:1.55;color:rgba(19,41,26,.75)}
+  .bz-logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:20px 28px}
+  .bz-logos div{width:130px;height:72px;display:flex;align-items:center;justify-content:center}
+  .bz-logos img{max-width:100%;max-height:100%;object-fit:contain}
+  .bz-logos img.udc{max-height:42px}
+  .bz-logos img.uv{max-height:62px}
+  .bz-cta{background:#F5C33B;border-radius:clamp(20px,3vw,28px);padding:clamp(24px,3.4vw,44px) clamp(18px,4vw,56px);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .bz-cta b{display:block;font-family:'League Spartan',sans-serif;font-weight:800;font-size:clamp(26px,3.4vw,42px);letter-spacing:-.045em;line-height:.95;color:#13291A}
+  .bz-cta span{display:block;font-size:16px;line-height:1.5;color:rgba(19,41,26,.8);margin-top:8px}
+  @media(max-width:899px){
+    .bz-hero{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px}
+    .bz-arch{height:320px}
+    .bz-arches{height:auto}
+    .bz-arches .bz-arch{width:100%}
+    .bz-small{display:none}
+    .bz-ctas.bz-dk{display:none}
+    .bz-ctas.bz-mb{display:flex;grid-column:1 / -1;gap:10px}
+    .bz-ctas.bz-mb .bz-btn{flex:1 1 0;min-width:0;height:52px;font-size:15px;padding:0 12px;text-align:center}
+    .bz-hero .col{justify-content:flex-start}
+    .bz-exp{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+    .bz-card{min-height:150px;padding:12px 10px 12px;border-radius:16px;gap:8px}
+    .bz-card small{font-size:9.5px;letter-spacing:.08em;height:2.7em;overflow:hidden}
+    .bz-card div{margin-top:0;gap:0}
+    .bz-card b{font-size:15px;line-height:1.1}
+    .bz-card span{font-size:11.5px;line-height:1.35;margin-top:5px}
+    .bz-steps{grid-template-columns:1fr}
+    .bz-tfg{grid-template-columns:1fr}
+    .bz-tfg img{max-width:120px}
+    .bz-facts{grid-template-columns:1fr}
+    .bz-part{grid-template-columns:1fr}
+    .bz-logos{gap:12px 10px}
+    .bz-logos div{width:23%;height:48px}
+  }
+
+  /* SCHOOLS PAGE */
+  .bz-arch.teal{background:#4FB3B0}
+  .bz-arch.teal img{object-position:50% 12%;filter:saturate(1.3) contrast(1.12) brightness(1.06)}
+  .sc-split{border-radius:clamp(20px,3vw,28px);overflow:hidden;color:#fff;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:stretch}
+  .sc-split.r{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
+  .sc-split .tx{padding:clamp(24px,4vw,52px) clamp(18px,4vw,56px);display:flex;flex-direction:column;justify-content:center;gap:18px}
+  .sc-split.r .tx{order:2}
+  .sc-split .ph{min-height:380px;position:relative}
+  .sc-split .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.3) contrast(1.12) brightness(1.06)}
+  .sc-split h2{color:#fff}
+  .sc-split .bz-eyebrow{color:#fff;margin-bottom:0}
+  .sc-split p{font-size:clamp(15px,1.4vw,17px);line-height:1.55;color:rgba(255,255,255,.92);margin:0;max-width:520px;text-wrap:pretty}
+  .sc-tags{display:flex;gap:10px;flex-wrap:wrap}
+  .sc-tags .a{background:#fff;color:#13291A;font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px}
+  .sc-tags .b{border:1.5px solid rgba(255,255,255,.5);font-weight:700;font-size:14px;padding:7px 14px;border-radius:999px}
+  .sc-btn{align-self:flex-start;text-decoration:none;background:#fff;color:#13291A;font-weight:800;font-size:15px;padding:0 24px;height:50px;display:inline-flex;align-items:center;border-radius:999px;margin-top:4px}
+  .sc-btn:hover{color:#13291A}
+  .sc-cm{background:#0B5A24;color:#fff;border-radius:clamp(20px,3vw,28px);padding:clamp(24px,4vw,52px) clamp(18px,4vw,56px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+  .sc-cm .t{display:flex;flex-direction:column;gap:18px}
+  .sc-cm .bz-eyebrow{color:#fff;margin-bottom:0}
+  .sc-cm h2{color:#fff}
+  .sc-cm p{font-size:clamp(15px,1.4vw,17px);line-height:1.55;color:rgba(255,255,255,.88);margin:0;max-width:560px;text-wrap:pretty}
+  .sc-cm .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:4px}
+  .sc-cm .row .a{background:#9BD13B;color:#13291A;font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px}
+  .sc-cm .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .sc-cm .grid div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:18px}
+  .sc-cm .grid b{display:block;font-family:'League Spartan',sans-serif;font-weight:700;font-size:21px;letter-spacing:-.03em;line-height:1.05;color:#9BD13B}
+  .sc-cm .grid span{display:block;font-size:14px;font-weight:500;line-height:1.45;color:rgba(255,255,255,.85);margin-top:8px}
+  .sc-camp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .sc-camp .bz-card{min-height:210px}
+  .sc-camp .top{display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:10px;margin-top:0}
+  .sc-camp .top small{height:auto}
+  .sc-camp .live{display:flex;flex-direction:row;align-items:center;gap:6px;background:#13291A;color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+  .sc-camp .live i{width:7px;height:7px;border-radius:50%;background:#9BD13B}
+  .sc-camp .bd{margin-top:auto}
+  .sc-camp .go{display:inline-flex;align-items:center;align-self:flex-start;text-decoration:none;background:#0B5A24;color:#fff;font-weight:800;font-size:14px;padding:0 18px;height:40px;border-radius:999px;margin-top:14px}
+  .sc-camp .go:hover{color:#fff}
+  @media(max-width:899px){
+    .sc-split,.sc-split.r,.sc-cm,.sc-camp{grid-template-columns:1fr}
+    .sc-split.r .tx{order:0}
+    .sc-split .ph{min-height:220px}
+    .sc-camp .bz-card{min-height:170px;padding:20px 18px 18px;border-radius:22px;gap:12px}
+    .sc-camp .bz-card b{font-size:22px}
+    .sc-camp .bz-card span{font-size:14px;margin-top:8px}
+    .bz-part{grid-template-columns:1fr}
+    .bz-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 10px}
+    .bz-logos div{width:auto;height:60px}
+  }
+</style><nav>
+  <div class="nav-in">
+    <a href="index.html"><img src="img/logo.png" alt="Feed a Friend"></a>
+    <div class="links">
+      <a href="index.html">Home</a>
+      <div class="dd"><button type="button">Projects <span>▼</span></button><div class="dd-pop"><div class="dd-box"><a href="project.html?p=food-boxes"><span class="d" style="background:#F5C33B"></span>Food Boxes</a><a href="project.html?p=welcome-baby"><span class="d" style="background:#C45CF0"></span>Welcome Baby</a><a href="project.html?p=community-fridges"><span class="d" style="background:#F9A24B"></span>Community Fridges</a><a href="project.html?p=little-learners"><span class="d" style="background:#4FB3B0"></span>Little Learners</a><a href="project.html?p=books-for-good"><span class="d" style="background:#7FB3E6"></span>Books for Good</a><a href="project.html?p=giving-garden"><span class="d" style="background:#F7AEF8"></span>Giving Garden</a><a href="project.html?p=share-and-care"><span class="d" style="background:#F2705E"></span>Share and Care<em>Soon</em></a></div></div></div>
+      <a href="index.html#volunteer">Volunteer</a>
+      <a href="https://connect.feedafriend.org/fridges">Fridge Map</a>
+      <a href="businesses.html">Businesses</a>
+      <a href="schools.html" class="on">Schools</a>
+    </div>
+    <div class="nav-cta">
+      <a href="index-ar.html" class="pill ghost">عربي</a>
+      <a href="https://connect.feedafriend.org" target="_blank" class="pill solid">Join Connect</a>
+      <details class="burger"><summary aria-label="Menu"><i></i><i></i><i></i></summary></details>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <div class="m-label">Projects</div>
+    <div class="m-grid"><a class="pj" href="project.html?p=food-boxes"><span class="d" style="background:#F5C33B"></span>Food Boxes</a><a class="pj" href="project.html?p=welcome-baby"><span class="d" style="background:#C45CF0"></span>Welcome Baby</a><a class="pj" href="project.html?p=community-fridges"><span class="d" style="background:#F9A24B"></span>Community Fridges</a><a class="pj" href="project.html?p=little-learners"><span class="d" style="background:#4FB3B0"></span>Little Learners</a><a class="pj" href="project.html?p=books-for-good"><span class="d" style="background:#7FB3E6"></span>Books for Good</a><a class="pj" href="project.html?p=giving-garden"><span class="d" style="background:#F7AEF8"></span>Giving Garden</a><a class="pj" href="project.html?p=share-and-care"><span class="d" style="background:#F2705E"></span>Share and Care</a></div>
+    <a href="index.html#volunteer">Volunteer</a>
+    <a href="https://connect.feedafriend.org/fridges">Fridge Map</a>
+    <a href="businesses.html">Businesses</a>
+    <a href="schools.html" class="on">Schools</a>
+    <a href="index-ar.html" class="m-ar">عربي</a>
+  </div>
+  </nav>
+
+<main>
+<section class="bz bz-hero">
+  <div class="col">
+    <div class="bz-eyebrow">For Schools</div>
+    <h1>Learning Through Giving</h1>
+    <p class="lead">Hands-on service learning for students of every age. In partnership with <strong>Together for Good Events</strong>, we bring workshops into your school, help you host a community fridge, and run campaigns your students can lead.</p>
+    <div class="bz-ctas bz-dk">
+      <a class="bz-btn lime" href="mailto:salaam@feedafriend.org?subject=School%20partnership%20enquiry">Get your school involved</a>
+      <a class="bz-btn line" href="#workshops">See ways to help</a>
+    </div>
+  </div>
+  <div class="bz-arches">
+    <div class="bz-arch teal"><div><img src="img/schools/hero.jpg" alt="Students volunteering with Feed a Friend"></div></div>
+  </div>
+  <div class="bz-ctas bz-mb">
+    <a class="bz-btn lime" href="mailto:salaam@feedafriend.org?subject=School%20partnership%20enquiry">Get your school involved</a>
+    <a class="bz-btn line" href="#workshops">See ways to help</a>
+  </div>
+</section>
+
+<section class="bz" id="workshops">
+  <div class="sc-split" style="background:#3B9F9C">
+    <div class="tx">
+      <div class="bz-eyebrow">Workshops</div>
+      <h2>In-School Workshops</h2>
+      <p>We come to your school with interactive workshops on food insecurity, kindness and giving — run in partnership with Together for Good Events.</p>
+      <div class="sc-tags"><span class="a">QAR 100 per student</span><span class="b">with Together for Good Events</span></div>
+      <a class="sc-btn" href="mailto:salaam@feedafriend.org?subject=School%20workshop%20enquiry">Book a workshop →</a>
+    </div>
+    <div class="ph"><img src="img/schools/workshop.jpg" alt="A Feed a Friend workshop in a classroom" style="object-position:50% 25%" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="bz" id="fridge">
+  <div class="sc-split r" style="background:#E88A2E">
+    <div class="tx">
+      <div class="bz-eyebrow">Community Fridges</div>
+      <h2>Install a Community Fridge</h2>
+      <p>Host a Feed a Friend double-door fridge outside your school, open to everyone. Once your municipality approves, we provide the fridge and your student leadership team keeps it stocked, cleaned and checked every day — a lasting way to give back to your neighbourhood.</p>
+      <a class="sc-btn" href="mailto:salaam@feedafriend.org?subject=Install%20a%20community%20fridge%20at%20our%20school">Ask about hosting a fridge →</a>
+    </div>
+    <div class="ph"><img src="img/schools/fridge.jpg" alt="A Feed a Friend community fridge at a school" style="object-position:50% 45%" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="bz" id="changemakers">
+  <div class="sc-cm">
+    <div class="t">
+      <div class="bz-eyebrow">Changemakers Programme</div>
+      <h2>Empowering the next generation to make a difference.</h2>
+      <p>A structured one- or two-year extra-curricular programme developing leadership, empathy and social responsibility through meaningful and local community action.</p>
+      <div class="row"><span class="a">QAR 300 per student</span><a class="sc-btn" href="mailto:salaam@feedafriend.org?subject=Changemakers%20Programme%20enquiry">Enquire about the programme →</a></div>
+    </div>
+    <div class="grid">
+      <div><b>1 or 2 years</b><span>A structured programme that builds over time.</span></div>
+      <div><b>Every Key Stage</b><span>Tailored to each age group and contextualised to Qatar.</span></div>
+      <div><b>Arabic &amp; English</b><span>Delivered in either language.</span></div>
+      <div><b>Teachers trained</b><span>We train lead teachers and provide resources and guidance.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="bz" id="campaigns">
+  <div class="bz-panel">
+    <div class="bz-head">
+      <div>
+        <div class="bz-eyebrow">Current Campaigns</div>
+        <h2>Run a drive at your school</h2>
+      </div>
+      <p>Students collect, we deliver. Running now — get your school on board.</p>
+    </div>
+    <div class="sc-camp">
+      <div class="bz-card" style="background:#5F98D1">
+        <div class="top"><small>Books for Good</small><span class="live"><i></i>Live now</span></div>
+        <div class="bd"><b>Book Drive</b><span>Collect preloved books in any language for children out of school. Proceeds from book sales support Little Learners.</span><a class="go" href="mailto:salaam@feedafriend.org?subject=Run%20a%20book%20drive%20at%20our%20school">Run a book drive</a></div>
+      </div>
+      <div class="bz-card" style="background:#AE43DB">
+        <div class="top"><small>Welcome Baby</small><span class="live"><i></i>Live now</span></div>
+        <div class="bd"><b>Baby Clothes Drive</b><span>Gather preloved baby clothes for new mothers in need, packed into Welcome Baby care boxes.</span><a class="go" href="mailto:salaam@feedafriend.org?subject=Run%20a%20baby%20clothes%20drive%20at%20our%20school">Run a clothes drive</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bz">
+  <div class="bz-eyebrow">How it works</div>
+  <div class="bz-steps">
+    <div class="bz-step"><i>1</i><div><b>Tell us about your school</b><span>Year groups, timing and the project your students care about.</span></div></div>
+    <div class="bz-step"><i>2</i><div><b>We plan it together</b><span>Workshop dates, fridge setup or campaign materials — we sort the details.</span></div></div>
+    <div class="bz-step"><i>3</i><div><b>Students make a difference</b><span>They see where their effort goes — and we share the impact.</span></div></div>
+  </div>
+</section>
+
+<section class="bz">
+  <div class="bz-tfg">
+    <img src="img/tfg-logo-light.png" alt="Together for Good — معاً للأفضل" width="700" height="604" loading="lazy">
+    <div class="body">
+      <div class="bz-eyebrow">Our Events Partner</div>
+      <h2>Together for Good Events</h2>
+      <p>Together for Good delivers our school workshops from start to finish, so your teachers can focus on the students.</p>
+      <div class="bz-facts">
+        <div class="bz-fact"><big>100%</big><em>of profits go to Feed a Friend</em></div>
+        <div class="bz-fact"><small>Registered with</small><strong>Ministry of Commerce &amp; Industry (MOCI), Qatar</strong></div>
+        <div class="bz-fact"><small>CR Number</small><div class="cr">229085</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bz" id="partners">
+  <div class="bz-part">
+    <div class="t">
+      <div class="bz-eyebrow">Our Partners</div>
+      <h2>Schools who've joined us</h2>
+      <p>Schools across Qatar raising the next generation of givers.</p>
+    </div>
+    <div class="bz-logos">
+        <div><img src="img/schools/isl-qatar.png" alt="International School of London Qatar" loading="lazy"></div>
+        <div><img src="img/schools/asd.png" alt="American School of Doha" loading="lazy"></div>
+        <div><img src="img/schools/queens-qatar.jpg" alt="Queen's Qatar" loading="lazy"></div>
+        <div><img src="img/schools/hamilton.jpg" alt="Hamilton International School" loading="lazy"></div>
+        <div><img src="img/schools/dps-mis.png" alt="DPS Modern Indian School" loading="lazy"></div>
+        <div><img src="img/schools/tng.jpg" alt="The Next Generation School" loading="lazy"></div>
+        <div><img src="img/schools/qa-school.png" alt="Qatar Academy" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="bz" style="padding-bottom:clamp(40px,6vw,80px)">
+  <div class="bz-cta">
+    <div><b>Ready to get your school involved?</b><span>Tell us about your school and year groups, and we'll suggest the best fit.</span></div>
+    <a class="bz-btn green" href="mailto:salaam@feedafriend.org?subject=School%20partnership%20enquiry">Get in touch →</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="foot">
+    <div class="l"><img src="img/logo-footer.png" alt="Feed a Friend — Together for Good"><span>© 2026 Feed a Friend</span></div>
+    <a href="https://instagram.com/feed.a.friend" target="_blank">@feed.a.friend</a>
+  </div>
+</footer>
+
+</body>
+</html>

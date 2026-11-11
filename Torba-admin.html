@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Torba Book Trail · Volunteer desk</title>
+<link rel="icon" href="https://xbxagukdvgyaoqvbqoic.supabase.co/storage/v1/object/public/avatars/Faflogowhite.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F5F1E9;--paper:#F8F5EF;--ink:#1C2A22;--green:#0E6B46;--deep:#174A33;--gold:#C9A45C;--goldtxt:#8A6A2F;--line:#E4DDD0;--mute:#5B6960;--mute2:#6E7B73;--faint:#8C8577;--warn:#9A5A4A;--serif:'Cormorant Garamond',serif;--sans:Jost,Helvetica,sans-serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.5}
+main{max-width:520px;margin:0 auto;min-height:100vh;background:var(--paper);display:flex;flex-direction:column}
+.wrap{padding:0 24px 32px}
+header{padding:24px;background:var(--deep);color:var(--paper);display:flex;justify-content:space-between;align-items:center;gap:12px}
+header .k{display:block;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#D7B878}
+header .t{display:block;font-family:var(--serif);font-size:30px;line-height:1;margin-top:4px}
+header .t em{color:#F0DDB2}
+header .s{display:block;font-size:12px;color:#C6CFC8;margin-top:4px}
+h2{margin:28px 0 12px;font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.05}
+h1.gate{margin:0;font-family:var(--serif);font-weight:400;font-size:40px;line-height:1.05}
+.card{background:#fff;border:1px solid var(--line);padding:22px;margin-top:10px}
+label{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute2);margin:14px 0 6px}
+label:first-child{margin-top:0}
+input,select{width:100%;font:16px var(--sans);padding:0 14px;border:1px solid #D8CDB8;border-radius:0;height:50px;background:#fff;color:var(--ink);outline:none}
+input:focus,select:focus{border-color:var(--green)}
+#pass{height:60px;font-family:var(--serif);font-size:30px;letter-spacing:.4em;text-align:center}
+.btn{appearance:none;border:0;border-radius:0;background:var(--green);color:var(--paper);font:400 15px var(--sans);letter-spacing:.06em;height:54px;padding:0 18px;width:100%;cursor:pointer;margin-top:16px}
+.btn:hover{background:var(--deep)}
+.btn.alt{background:var(--ink)}.btn.ghost{background:transparent;color:var(--ink);border:1px solid #D8CDB8}.btn.danger{background:transparent;color:var(--warn);border:0;text-decoration:underline;height:auto;padding:4px 0}
+.btn.small{width:auto;height:36px;padding:0 14px;font-size:12px;margin:0}
+.btn.danger.small{height:auto}
+.btn[disabled]{opacity:.55;cursor:default}
+header .btn.small{background:transparent;color:var(--paper);border:1px solid #2F6349}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--line);background:#fff;margin:0 -24px}
+.tab{height:54px;border:0;background:transparent;font:400 14px var(--sans);letter-spacing:.06em;cursor:pointer;color:var(--faint)}
+.tab.on{color:var(--green);box-shadow:inset 0 -2px 0 var(--green)}
+.msg{margin-top:12px;font-size:13px;min-height:0;color:var(--mute)}.msg:empty{display:none}.msg.err{color:var(--warn)}.msg.ok{color:var(--green);font-weight:500}
+.counter{margin-top:24px;display:flex;flex-direction:column;gap:6px;padding:22px;background:var(--deep);color:var(--paper)}
+.counter .k{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#D7B878}
+.counter .n{font-family:var(--serif);font-size:72px;line-height:1;color:#F0DDB2;font-variant-numeric:lining-nums tabular-nums}
+.counter .d{font-size:12px;color:#C6CFC8}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin-top:0;background:#fff;border-bottom:1px solid var(--line)}
+.stat{padding:16px 0 16px 16px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{font-family:var(--serif);font-weight:400;font-size:32px;line-height:1;color:var(--green)}.stat span{font-size:12px;color:var(--mute2);line-height:1.25}
+.code{font-family:var(--serif);font-size:30px;letter-spacing:.1em;color:var(--ink)}
+.pill{display:inline-block;padding:6px 10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--gold);color:var(--goldtxt)}
+.pill.ok{border-color:#CFC6B5;color:var(--faint)}.pill.wait{border-color:var(--green);color:var(--green)}.pill.no{border-color:var(--gold);color:var(--goldtxt)}
+.dots{display:flex;gap:8px;margin:14px 0;padding:14px 0;border-top:1px solid #EDE7DB;border-bottom:1px solid #EDE7DB}
+.dot{width:36px;height:36px;border-radius:50%;border:1px dashed #CFC6B5;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:16px;color:#A9A294;background:#fff}
+.dot.on{background:var(--green);border:1px solid var(--green);color:var(--paper)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-top:1px solid #EDE7DB;font-size:13px}
+.row:first-child{border-top:0}
+.row b{font-family:var(--serif);font-weight:400;font-size:24px;color:var(--green)}
+.hidden{display:none!important}
+.fine{font-size:12px;line-height:1.5;color:var(--faint)}
+.foot{margin-top:auto;padding:18px 24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:12px;color:var(--faint)}
+.foot a{color:var(--green)}
+</style>
+</head>
+<body>
+<main>
+<header><div><span class="k">Volunteers only</span><span class="t">Volunteer <em>Desk</em></span><span class="s">Torba x Feed a Friend Preloved Book Trail</span></div><button class="btn small ghost hidden" id="lock" type="button">Lock</button></header>
+<div class="wrap">
+
+<div id="gate">
+  <h1 class="gate" style="margin-top:40px">Enter the volunteer passcode.</h1>
+  <div class="card">
+    <label for="pass">Passcode</label>
+    <input type="password" id="pass" autocomplete="current-password" autocapitalize="off">
+    <button class="btn" id="enter" type="button">Open the desk</button>
+    <div class="msg err" id="gateMsg" role="alert"></div>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+  <div class="counter"><span class="k">Live counter total</span><span class="n" id="kBooks">–</span><span class="d">books logged · shows on the public page</span></div>
+  <div class="stats">
+    <div class="stat"><b id="kVis">–</b><span>passports</span></div>
+    <div class="stat"><b id="kReady">–</b><span>gifts waiting</span></div>
+    <div class="stat"><b id="kClaimed">–</b><span>gifts given</span></div>
+  </div>
+  <div class="tabs" style="margin-top:0"><button class="tab on" data-tab="desk" type="button">Gift desk</button><button class="tab" data-tab="books" type="button">Log books</button><button class="tab" data-tab="send" type="button">Emails</button></div>
+
+  <section id="t-desk">
+    <h2>Find a passport</h2>
+    <div class="card">
+      <label for="q">Passport code, mobile or email</label>
+      <input type="text" id="q" autocapitalize="characters" autocomplete="off" placeholder="TB-XXXX or 5xxxxxxx">
+      <button class="btn" id="find" type="button">Look up</button>
+      <div class="msg" id="findMsg" role="alert"></div>
+    </div>
+    <div class="card hidden" id="vcard"></div>
+  </section>
+
+  <section id="t-books" class="hidden">
+    <h2>Log donated books</h2>
+    <div class="card">
+      <label for="bStop">Where were they dropped?</label>
+      <select id="bStop"><option value="0">Books for Good stall</option><option value="1">1 · The Secret Garden</option><option value="2">2 · Down the Rabbit Hole</option><option value="3">3 · From Farm to Fable</option><option value="4">4 · Nurture Your Nature</option></select>
+      <label for="bN">Number of books</label>
+      <input type="number" id="bN" inputmode="numeric" min="1" max="5000" placeholder="e.g. 24">
+      <button class="btn" id="bLog" type="button">Add to the count</button>
+      <div class="msg" id="bMsg" role="alert"></div>
+      <p class="fine">This feeds the public counters on the trail page. Count books you actually received or restocked, once.</p>
+    </div>
+    <h2>Last entries</h2>
+    <div class="card" id="bLogList"></div>
+  </section>
+
+  <section id="t-send" class="hidden">
+    <h2>Email visitors</h2>
+    <div class="card">
+      <label for="kind">Which email?</label>
+      <select id="kind">
+        <option value="reminder">Reminder: finish the trail (1 to 3 stamps)</option>
+        <option value="ready">Gift waiting (all 4 stamps, not collected)</option>
+        <option value="impact">Impact update (people who opted in)</option>
+      </select>
+      <button class="btn ghost" id="count" type="button">Count recipients first</button>
+      <div class="msg" id="sMsg" role="alert"></div>
+      <button class="btn alt hidden" id="sendNow" type="button">Send now</button>
+      <p class="fine">Always count first. Nobody gets the same email twice within 20 days. Send a "gift waiting" email on the evening before a Feed a Friend Saturday.</p>
+    </div>
+  </section>
+</div>
+</div>
+<div class="foot"><span>Torba Market · season 2026/27</span><a href="https://www.feedafriend.org/Torba">Public page ↗</a></div>
+</main>
+
+<script>
+(function(){
+'use strict';
+var SB='https://xbxagukdvgyaoqvbqoic.supabase.co';
+var KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhieGFndWtkdmd5YW9xdmJxb2ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODAwNDExNDAsImV4cCI6MjA5NTYxNzE0MH0.-NifUdfkr9cZIDDtKNl5aQe9WMZab7l4boAJDAgfb-4';
+var STOP_NAMES=['Books for Good stall','The Secret Garden','Down the Rabbit Hole','From Farm to Fable','Nurture Your Nature'];
+var pass='',cur=null,pendingKind=null;
+function $(i){return document.getElementById(i)}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function rpc(fn,body){
+  return fetch(SB+'/rest/v1/rpc/'+fn,{method:'POST',headers:{'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json'},body:JSON.stringify(body||{})})
+   .then(function(r){return r.json().then(function(j){if(!r.ok){var e=new Error((j&&j.message)||('http '+r.status));e.locked=/locked/i.test(e.message);throw e}return j})});
+}
+function say(id,txt,cls){var e=$(id);e.textContent=txt||'';e.className='msg'+(cls?' '+cls:'')}
+function fail(id,e){say(id,e&&e.locked?'Too many wrong passcodes. Wait 10 minutes and try again.':'Could not reach the server. Check the connection and try again.','err')}
+function denied(){pass='';try{sessionStorage.removeItem('tb_pass')}catch(e){}$('app').classList.add('hidden');$('gate').classList.remove('hidden');$('lock').classList.add('hidden');say('gateMsg','Passcode not recognised.','err')}
+
+function summary(j){
+  if(j.status==='denied'){denied();return false}
+  $('kBooks').textContent=Number(j.logged).toLocaleString('en-US');$('kVis').textContent=j.visitors;$('kReady').textContent=j.ready;$('kClaimed').textContent=j.claimed;
+  var l=j.log||[];
+  $('bLogList').innerHTML=l.length?l.map(function(x){return '<div class="row"><span><b>'+x.n+'</b> books · '+esc(STOP_NAMES[x.stop]||'')+'<br><span class="fine">'+esc(x.when)+'</span></span><button class="btn small danger" data-undo="'+x.id+'" type="button">Undo</button></div>'}).join(''):'<span class="fine">Nothing logged yet.</span>';
+  return true;
+}
+function open(){
+  $('gate').classList.add('hidden');$('app').classList.remove('hidden');$('lock').classList.remove('hidden');
+}
+function enter(){
+  var p=$('pass').value;if(!p){say('gateMsg','Enter the passcode.','err');return}
+  $('enter').disabled=true;say('gateMsg','');pass=p;
+  rpc('tb_admin_summary',{p_pass:p}).then(function(j){
+    if(j.status==='denied'){pass='';say('gateMsg','Passcode not recognised.','err')}
+    else{try{sessionStorage.setItem('tb_pass',p)}catch(e){}$('pass').value='';open();summary(j)}
+  }).catch(function(e){pass='';fail('gateMsg',e)}).then(function(){$('enter').disabled=false});
+}
+function lock(){pass='';try{sessionStorage.removeItem('tb_pass')}catch(e){}$('app').classList.add('hidden');$('gate').classList.remove('hidden');$('lock').classList.add('hidden');$('vcard').classList.add('hidden')}
+
+function showVisitor(v){
+  cur=v;var n=(v.visited||[]).length,done=n>=4,coll=v.collected;
+  var dots='';for(var i=1;i<=4;i++)dots+='<div class="dot'+((v.visited||[]).indexOf(i)>-1?' on':'')+'">'+((v.visited||[]).indexOf(i)>-1?'✓':i)+'</div>';
+  var pill=coll?'<span class="pill ok">Gift given '+esc(coll)+'</span>':done?'<span class="pill wait">Gift waiting</span>':'<span class="pill no">'+n+' of 4 stamps</span>';
+  var btn=coll?'':done?'<button class="btn" id="redeem" type="button">Hand over the gift</button>':'<button class="btn" disabled type="button">Needs all 4 stamps</button>';
+  $('vcard').innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><b style="font-size:19px">'+esc(v.first)+'</b>'+pill+'</div><div class="code">'+esc(v.code)+'</div><div class="dots">'+dots+'</div><div class="fine">'+esc(v.mobile)+' · '+esc(v.email)+'</div>'+btn+'<div class="msg" id="rMsg" role="alert"></div>';
+  $('vcard').classList.remove('hidden');
+}
+function find(){
+  var q=$('q').value.trim();if(!q){say('findMsg','Type a code, mobile number or email.','err');return}
+  $('find').disabled=true;say('findMsg','');
+  rpc('tb_admin_lookup',{p_pass:pass,p_q:q}).then(function(j){
+    if(j.status==='denied')return denied();
+    if(j.status==='notfound'){$('vcard').classList.add('hidden');say('findMsg','No passport found. Check the spelling, or try the mobile number.','err')}
+    else showVisitor(j);
+  }).catch(function(e){fail('findMsg',e)}).then(function(){$('find').disabled=false});
+}
+function redeem(){
+  if(!cur)return;$('redeem').disabled=true;
+  rpc('tb_admin_redeem',{p_pass:pass,p_code:cur.code}).then(function(j){
+    if(j.status==='denied')return denied();
+    if(j.status==='ok'){showVisitor(j);say('rMsg','Gift recorded. A thank-you email has been queued.','ok');refresh()}
+    else if(j.status==='incomplete')say('rMsg','This passport does not have all 4 stamps yet.','err');
+    else say('rMsg','Could not find that passport.','err');
+  }).catch(function(e){fail('rMsg',e);$('redeem')&&($('redeem').disabled=false)});
+}
+function refresh(){rpc('tb_admin_summary',{p_pass:pass}).then(summary).catch(function(){})}
+function logBooks(){
+  var stop=parseInt($('bStop').value,10),n=parseInt($('bN').value,10);
+  if(!(n>=1&&n<=5000)){say('bMsg','Enter a number between 1 and 5000.','err');return}
+  $('bLog').disabled=true;say('bMsg','');
+  rpc('tb_admin_log',{p_pass:pass,p_stop:stop,p_n:n}).then(function(j){
+    if(j.status==='invalid'){say('bMsg','That entry was not accepted.','err');return}
+    if(summary(j)){say('bMsg',n+' books added.','ok');$('bN').value=''}
+  }).catch(function(e){fail('bMsg',e)}).then(function(){$('bLog').disabled=false});
+}
+function undo(id){
+  rpc('tb_admin_undo',{p_pass:pass,p_id:id}).then(function(j){if(summary(j))say('bMsg','Entry removed.','ok')}).catch(function(e){fail('bMsg',e)});
+}
+function countRecipients(){
+  var k=$('kind').value;$('count').disabled=true;$('sendNow').classList.add('hidden');say('sMsg','');
+  rpc('tb_admin_broadcast',{p_pass:pass,p_kind:k,p_dry:true}).then(function(j){
+    if(j.status==='denied')return denied();
+    if(j.status!=='ok'){say('sMsg','Unknown email type.','err');return}
+    if(j.recipients===0){say('sMsg','Nobody to email for this one right now.','ok');return}
+    pendingKind=k;say('sMsg',j.recipients+' '+(j.recipients===1?'person':'people')+' would receive this email.','ok');$('sendNow').textContent='Send to '+j.recipients+' now';$('sendNow').classList.remove('hidden');
+  }).catch(function(e){fail('sMsg',e)}).then(function(){$('count').disabled=false});
+}
+function sendNow(){
+  if(!pendingKind)return;$('sendNow').disabled=true;
+  rpc('tb_admin_broadcast',{p_pass:pass,p_kind:pendingKind,p_dry:false}).then(function(j){
+    if(j.status==='denied')return denied();
+    say('sMsg','Queued for '+j.recipients+'. They will go out within a few minutes.','ok');$('sendNow').classList.add('hidden');pendingKind=null;
+  }).catch(function(e){fail('sMsg',e)}).then(function(){$('sendNow').disabled=false});
+}
+
+$('enter').onclick=enter;$('pass').addEventListener('keydown',function(e){if(e.key==='Enter')enter()});
+$('lock').onclick=lock;$('find').onclick=find;$('q').addEventListener('keydown',function(e){if(e.key==='Enter')find()});
+$('vcard').addEventListener('click',function(e){if(e.target.id==='redeem')redeem()});
+$('bLog').onclick=logBooks;$('bLogList').addEventListener('click',function(e){var id=e.target.getAttribute&&e.target.getAttribute('data-undo');if(id)undo(Number(id))});
+$('count').onclick=countRecipients;$('sendNow').onclick=sendNow;$('kind').onchange=function(){$('sendNow').classList.add('hidden');say('sMsg','');pendingKind=null};
+var tabs=document.querySelectorAll('.tab');
+for(var i=0;i<tabs.length;i++)tabs[i].onclick=function(){
+  for(var j=0;j<tabs.length;j++){tabs[j].classList.remove('on');$('t-'+tabs[j].getAttribute('data-tab')).classList.add('hidden')}
+  this.classList.add('on');$('t-'+this.getAttribute('data-tab')).classList.remove('hidden');
+};
+try{var sp=sessionStorage.getItem('tb_pass');if(sp){pass=sp;rpc('tb_admin_summary',{p_pass:sp}).then(function(j){if(j.status==='ok'){open();summary(j)}else{pass=''}}).catch(function(){pass=''})}}catch(e){}
+})();
+</script>
+</body>
+</html>
